@@ -131,7 +131,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\9ea314d0f221a86365b34f6236529c05-ConvertImage.png" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\stuff.png" />
     <Content Include="Content\yourrestaurant.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

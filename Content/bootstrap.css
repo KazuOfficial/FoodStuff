@@ -6333,10 +6333,12 @@ a.thumbnail.active {
 .list-group-item {
     position: relative;
     display: block;
-    padding: 10px 15px;
+    /*padding: 10px 15px;*/
+    padding: 20px 25px;
     margin-bottom: -1px;
     background-color: #ffffff;
     border: 1px solid #dddddd;
+    font-size: 15px;
 }
 
     .list-group-item:first-child {
