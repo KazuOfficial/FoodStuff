@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FoodStuff.Models
+namespace FoodStuffManager.Models
 {
     public class MenuModel
     {
