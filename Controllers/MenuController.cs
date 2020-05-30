@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodStuff.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,15 @@ namespace FoodStuff.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult ListMenu()
+        {
+            List<MenuModel> menu = new List<MenuModel>();
+
+            menu.Add(new MenuModel { Name = "Stopiątka", Description = "Salami, kurczak", Price = 16.99 });
+
+            return View(menu);
         }
     }
 }
