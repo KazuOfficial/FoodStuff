@@ -50,19 +50,12 @@
 
     </table>-->
 <hr />
-<div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-        <li><a href="#section1">Pizza</a></li>
-        <li><a href="#section2">Drinks</a></li>
-    </ul>
-</div>
-<hr />
     <div class="col-lg-12">
         <div class="list-group">
             @foreach (var item in Model)
             {
             <button type="button" class="list-group-item list-group-item-action">
-                <span class="badge badge-primary badge">@Html.DisplayFor(modelItem => item.Price)</span>
+                <span class="badge badge-primary badge">$@Html.DisplayFor(modelItem => item.Price)</span>
                 @Html.DisplayFor(modelItem => item.Name)<br />
                 <small>@Html.DisplayFor(modelItem => item.Description)</small>
             </button>
