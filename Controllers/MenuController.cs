@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DataLibrary;
+using static DataLibrary.Logic.MenuProcessor;
 
 namespace FoodStuffManager.Controllers
 {
@@ -17,21 +19,21 @@ namespace FoodStuffManager.Controllers
 
         public ActionResult ListMenu()
         {
-            List<MenuModel> menu = new List<MenuModel>();
+            var data = LoadMenu();
+            List<MenuModel> menus = new List<MenuModel>();
 
-            menu.Add(new MenuModel { Name = "Stopiątka", Description = "Pieczarki, boczek, salami, szynka, kurczak", Price = 25.99 });
-            menu.Add(new MenuModel { Name = "Margherita", Description = "Ser i tyle", Price = 16.99 });
-            menu.Add(new MenuModel { Name = "Relax", Description = "Szynka, boczek, sos śmietanowy", Price = 22.99 });
-            menu.Add(new MenuModel { Name = "Amerykańska", Description = "Salami, szynka, kurczak", Price = 25.99 });
-            menu.Add(new MenuModel { Name = "Meksykańska", Description = "Sos śmietanowy, ser", Price = 30.99 });
-            menu.Add(new MenuModel { Name = "Polska", Description = "Szynka,  sos śmietanowy", Price = 24.99 });
-            menu.Add(new MenuModel { Name = "Świętokrzyska", Description = "Pieczarki, kurczak", Price = 28.99 });
-            menu.Add(new MenuModel { Name = "Od szwagra", Description = "Ser, sos pomidorowy", Price = 32.99 });
-            menu.Add(new MenuModel { Name = "Jak u babki", Description = "Szynka, boczek", Price = 21.99 });
-            menu.Add(new MenuModel { Name = "Kubańska", Description = "Papaje, kurczak, ser", Price = 34.99 });
-            menu.Add(new MenuModel { Name = "Hiszpańska", Description = "Ananas, oliwki, sos pomidorowy", Price = 31.99 });
+            foreach (var row in data)
+            {
+                menus.Add(new MenuModel
+                {
+                    Name = row.Name,
+                    Description = row.Description,
+                    Price = row.Price,
+                    Category = row.Category
+                });
+            }
 
-            return View(menu);
+            return View(menus);
         }
     }
 }

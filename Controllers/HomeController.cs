@@ -29,5 +29,12 @@ namespace FoodStuffManager.Controllers
 
             return View();
         }
+
+        [Authorize]
+        public ActionResult Orders()
+        {
+
+            return View();
+        }
     }
 }

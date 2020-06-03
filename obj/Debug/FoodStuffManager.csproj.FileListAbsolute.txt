@@ -103,3 +103,7 @@ D:\Users\Kazu\source\repos\FoodStuffManager\FoodStuffManager\obj\Debug\FoodStuff
 D:\Users\Kazu\source\repos\FoodStuffManager\FoodStuffManager\obj\Debug\FoodStuffManager.csproj.CopyComplete
 D:\Users\Kazu\source\repos\FoodStuffManager\FoodStuffManager\obj\Debug\FoodStuffManager.dll
 D:\Users\Kazu\source\repos\FoodStuffManager\FoodStuffManager\obj\Debug\FoodStuffManager.pdb
+D:\Users\Kazu\source\repos\FoodStuffManager\FoodStuffManager\bin\DataLibrary.dll
+D:\Users\Kazu\source\repos\FoodStuffManager\FoodStuffManager\bin\Dapper.dll
+D:\Users\Kazu\source\repos\FoodStuffManager\FoodStuffManager\bin\DataLibrary.pdb
+D:\Users\Kazu\source\repos\FoodStuffManager\FoodStuffManager\bin\Dapper.xml
