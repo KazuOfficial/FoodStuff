@@ -15,18 +15,6 @@ namespace FoodStuffManager.Models
 
     public class OrderModel
     {
-        public string Order { get; set; }
 
-        public string Price { get; set; }
-
-        public string Name { get; set; }
-
-        public string Street { get; set; }
-
-        public string Email { get; set; }
-
-        public int Postcode { get; set; }
-
-        public int Number { get; set; }
     }
 }
