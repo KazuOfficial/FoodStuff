@@ -25,6 +25,10 @@ namespace FoodStuffManager
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/custom").Include(
+            "~/scripts/removeClass.js",
+            "~/scripts/child.js"));
         }
     }
 }
