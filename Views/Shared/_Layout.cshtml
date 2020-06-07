@@ -32,12 +32,11 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p class="text-center">&copy; @DateTime.Now.Year - made by Kazu <br /> <a href="https://github.com/KazuOfficial" target="_blank">https://github.com/KazuOfficial</a></p>
-        </footer>
     </div>
-
+    <br />
+    <footer>
+        <p class="text-center">&copy; @DateTime.Now.Year - made by Kazu <br /> <a href="https://github.com/KazuOfficial" target="_blank">https://github.com/KazuOfficial</a></p>
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/custom")
