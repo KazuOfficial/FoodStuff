@@ -1,0 +1,8 @@
+D:\Users\Kazu\source\repos\FoodStuffManager\DataLibrary\bin\Debug\DataLibrary.dll
+D:\Users\Kazu\source\repos\FoodStuffManager\DataLibrary\bin\Debug\DataLibrary.pdb
+D:\Users\Kazu\source\repos\FoodStuffManager\DataLibrary\bin\Debug\Dapper.dll
+D:\Users\Kazu\source\repos\FoodStuffManager\DataLibrary\bin\Debug\Dapper.xml
+D:\Users\Kazu\source\repos\FoodStuffManager\DataLibrary\obj\Debug\DataLibrary.csprojAssemblyReference.cache
+D:\Users\Kazu\source\repos\FoodStuffManager\DataLibrary\obj\Debug\DataLibrary.csproj.CopyComplete
+D:\Users\Kazu\source\repos\FoodStuffManager\DataLibrary\obj\Debug\DataLibrary.dll
+D:\Users\Kazu\source\repos\FoodStuffManager\DataLibrary\obj\Debug\DataLibrary.pdb
