@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using DataLibrary;
 using static DataLibrary.Logic.MenuProcessor;
+using System.Dynamic;
 
 namespace FoodStuffManager.Controllers
 {
@@ -20,6 +21,7 @@ namespace FoodStuffManager.Controllers
         public ActionResult ListMenu()
         {
             var data = LoadMenu();
+
             List<MenuModel> menus = new List<MenuModel>();
 
             foreach (var row in data)
@@ -33,13 +35,16 @@ namespace FoodStuffManager.Controllers
                 });
             }
 
-            List<MenuModel> order = new List<MenuModel>();
-            order.Add(new MenuModel
-            {
+            List<ShopModel> shops = new List<ShopModel>();
 
-            });
+            shops.Add(new ShopModel { Name = "Stopiatka", Price = 10.99 });
+            shops.Add(new ShopModel { Name = "Margherita", Price = 5.99 });
 
-            return View(menus);
+            ViewModel mymodel = new ViewModel();
+            mymodel.Menus = menus;
+            mymodel.Shops = shops;
+
+            return View(mymodel);
         }
     }
 }
