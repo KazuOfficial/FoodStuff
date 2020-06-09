@@ -35,16 +35,8 @@ namespace FoodStuffManager.Controllers
                 });
             }
 
-            List<ShopModel> shops = new List<ShopModel>();
-
-            shops.Add(new ShopModel { Name = "Stopiatka", Price = 10.99 });
-            shops.Add(new ShopModel { Name = "Margherita", Price = 5.99 });
-
-            ViewModel mymodel = new ViewModel();
-            mymodel.Menus = menus;
-            mymodel.Shops = shops;
-
-            return View(mymodel);
+            return View(menus);
         }
+
     }
 }

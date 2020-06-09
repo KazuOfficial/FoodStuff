@@ -8,6 +8,6 @@ namespace FoodStuffManager.Models
     public class ViewModel
     {
         public IEnumerable<MenuModel> Menus { get; set; }
-        public IEnumerable<ShopModel> Shops { get; set; }
+        //public IEnumerable<ShopModel> Shops { get; set; }
     }
 }
