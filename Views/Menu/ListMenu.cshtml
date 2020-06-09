@@ -4,81 +4,67 @@
     ViewBag.Title = "ListMenu";
 }
 
-<!--
-<p>
-    @*Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category)
-        </th>
-        <th></th>
-    </tr>
+<script>
+    //var slist = { name: "Stopiatka", price: 10.99 };
+    //document.getElementById("name").innerHTML = slist["name"];
+    //document.getElementById("price").innerHTML = "$" + slist["price"];
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}*@
+    var names = [];
+    var prices = [];
+    var counter = 0;
 
-</table>-->
+    function addRow() {
+
+        var tableRef = document.getElementById('shopTable').getElementsByTagName('tbody')[0];
+        var newRow = tableRef.insertRow();
+
+        var indexCell = newRow.insertCell(0);
+        var nameCell = newRow.insertCell(1);
+        var priceCell = newRow.insertCell(2);
+
+        var newText = document.createTextNode("x1");
+        var newName = document.createTextNode(names[counter]);
+        var newPrice = document.createTextNode("$" + prices[counter]);
+
+        indexCell.appendChild(newText);
+        nameCell.appendChild(newName);
+        priceCell.appendChild(newPrice);
+        counter++;
+    }
+
+    function addItem(name, price) {
+        names.push(name);
+        prices.push(price);
+    }
+
+    function fullPrice() {
+        //var fullP = prices.map();
+        var fullP = prices.reduce(function(a, b){
+            return a + b;
+        }, 0);
+        document.getElementById("fullp").innerHTML = "$" + fullP;
+    }
+
+</script>
 
 <hr />
 <div id="shop" class="col-lg-6 pull-right jumbotron hidden">
-    <table class="table">
+    <table id="shopTable" class="table">
         Your order
-        <tr>
-            <td>1x</td>
-            <td id="name"></td>
-            <td id="price"></td>
-            <td>
-                <button type="button">
-                    <svg class="bi bi-trash-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
-                    </svg>
-                </button>
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <!--<td>
+                    <button type="button">
+                        <svg class="bi bi-trash-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
+                        </svg>
+                    </button>
+                </td>-->
+            </tr>
+        </tbody>
     </table>
-    <script>
-        var slist = { name: "Stopiatka", price: 10.99 };
-        document.getElementById("name").innerHTML = slist["name"];
-        document.getElementById("price").innerHTML = "$" + slist["price"];
-        //slist.push("Lemon")
-    </script>
-    <span class="pull-right">Value of the order: <b>$10.99</b></span><br /><br />
+    <span class="pull-right">Value of the order: <b id="fullp"></b></span><br /><br />
     <button type="button" class="list-group-item list-group-item-action">PLACE AN ORDER</button>
-    @*Html.ActionLink("Add another...", "BlankEditorRow", null, new { id = "addItem" })*@
-    @*{
-            var stuff = "stuff";
-            elements.Add(stuff);
-        }*@
 </div>
 <div id="foodmenu" class="col-lg-12">
     <!--<div class="col-lg-6">-->
@@ -86,7 +72,7 @@
         @foreach (var item in Model)
         {
             <h4>@Html.DisplayFor(modelItem => item.Category)</h4>
-            <button type="button" class="list-group-item list-group-item-action" onclick="removeClass('shop', 'hidden')">
+            <button type="button" class="list-group-item list-group-item-action" onclick="removeClass('shop', 'hidden'); addItem('@(item.Name)', @(item.Price)); addRow(); fullPrice()">
                 <span class="badge badge-primary badge">$@Html.DisplayFor(modelItem => item.Price)</span>
                 @Html.DisplayFor(modelItem => item.Name)<br />
                 <small>@Html.DisplayFor(modelItem => item.Description)</small>
