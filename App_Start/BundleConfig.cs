@@ -27,7 +27,7 @@ namespace FoodStuffManager
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
-            "~/scripts/removeClass.js",
+            "~/scripts/shoppingBasket.js",
             "~/scripts/child.js"));
         }
     }

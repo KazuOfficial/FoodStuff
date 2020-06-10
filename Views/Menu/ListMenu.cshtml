@@ -4,52 +4,6 @@
     ViewBag.Title = "ListMenu";
 }
 
-<script>
-    //var slist = { name: "Stopiatka", price: 10.99 };
-    //document.getElementById("name").innerHTML = slist["name"];
-    //document.getElementById("price").innerHTML = "$" + slist["price"];
-
-    var names = [];
-    var prices = [];
-    var counter = 0;
-
-    function addRow() {
-
-        var tableRef = document.getElementById('shopTable').getElementsByTagName('tbody')[0];
-        var newRow = tableRef.insertRow();
-
-        var indexCell = newRow.insertCell(0);
-        var nameCell = newRow.insertCell(1);
-        var priceCell = newRow.insertCell(2);
-
-        var newText = document.createTextNode("x1");
-        var newName = document.createTextNode(names[counter]);
-        var newPrice = document.createTextNode("$" + prices[counter]);
-
-        indexCell.appendChild(newText);
-        nameCell.appendChild(newName);
-        priceCell.appendChild(newPrice);
-        counter++;
-    }
-
-    function addItem(name, price) {
-        names.push(name);
-        prices.push(price);
-    }
-
-    function fullPrice() {
-        //var fullP = prices.map();
-        var fullP = prices.reduce(function(a, b){
-            return a + b;
-        }, 0);
-
-        fullP = parseFloat(fullP).toFixed(2);
-
-        document.getElementById("fullp").innerHTML = "$" + fullP;
-    }
-
-</script>
-
 <hr />
 <div id="shop" class="col-lg-6 pull-right jumbotron hidden">
     <table id="shopTable" class="table">
@@ -75,7 +29,7 @@
         @foreach (var item in Model)
         {
             <h4>@Html.DisplayFor(modelItem => item.Category)</h4>
-            <button type="button" class="list-group-item list-group-item-action" onclick="removeClass('shop', 'hidden'); addItem('@(item.Name)', @(item.Price)); addRow(); fullPrice()">
+            <button type="button" class="list-group-item list-group-item-action" onclick="removeClass('shop', 'hidden'); addItem('@(item.Name)', @(item.Price)); addRow(); fullPrice();">
                 <span class="badge badge-primary badge">$@Html.DisplayFor(modelItem => item.Price)</span>
                 @Html.DisplayFor(modelItem => item.Name)<br />
                 <small>@Html.DisplayFor(modelItem => item.Description)</small>
