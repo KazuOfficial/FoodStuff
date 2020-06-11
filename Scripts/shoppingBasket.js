@@ -20,6 +20,12 @@ function removeClass(divname, classname) {
     }
 }
 
+function addClass(divname, classname) {
+
+    var element = document.getElementById(divname);
+    element.className = classname;
+}
+
 function addRow() {
 
     var tableRef = document.getElementById('shopTable').getElementsByTagName('tbody')[0];
