@@ -34,14 +34,21 @@ function addRow() {
     var indexCell = newRow.insertCell(0);
     var nameCell = newRow.insertCell(1);
     var priceCell = newRow.insertCell(2);
+    var binCell = newRow.insertCell(3);
 
     var newText = document.createTextNode("x1");
     var newName = document.createTextNode(names[counter]);
     var newPrice = document.createTextNode("$" + prices[counter]);
 
+    var btntag = document.createElement("button");
+    var spantag = document.createElement("span");
+    btntag.className = "btn btn-link";
+    spantag.className = "glyphicon glyphicon-trash";
+
     indexCell.appendChild(newText);
     nameCell.appendChild(newName);
     priceCell.appendChild(newPrice);
+    binCell.appendChild(btntag.appendChild(spantag));
     counter++;
 }
 
