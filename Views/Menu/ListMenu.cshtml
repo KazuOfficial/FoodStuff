@@ -7,7 +7,10 @@
 <hr />
 <div id="shop" class="col-lg-6 col-xs-12 pull-right jumbotron hidden">
     Your order
-    <button type="button" class="btn btn-link pull-right" onclick="addClass('shop', 'hidden col-lg-6 pull-right jumbotron'); removeClass('foodmenu', 'col-lg-6'); addClass('foodmenu', 'col-lg-12');"><span class="glyphicon glyphicon-arrow-left"></span></button>
+    <!-- TODO: PACK THESE UGLY CLASSES INTO ONE SCRIPT -->
+    <button id="firstback" type="button" class="btn btn-link pull-right" onclick="addClass('shop', 'hidden col-lg-6 pull-right jumbotron'); removeClass('foodmenu', 'col-lg-6'); addClass('foodmenu', 'col-lg-12');"><span class="glyphicon glyphicon-arrow-left"></span></button>
+    <button id="secondback" type="button" class="btn btn-link pull-right hidden" onclick="addClass('form', 'hidden'); addClass('paymenttype', 'hidden'); removeClass('placeanorder', 'hidden'); addClass('placeanorder', 'list-group-item list-group-item-action'); removeClass('firstback', 'hidden'); addClass('secondback', 'hidden'); addClass('firstback', 'btn btn-link pull-right');"><span class="glyphicon glyphicon-arrow-left"></span></button>
+    <button id="thirdback" type="button" class="btn btn-link pull-right hidden" onclick="addClass('paypal-button-container', 'hidden'); removeClass('form', 'hidden'); removeClass('paymenttype', 'hidden'); addClass('paymenttype', 'list-group-item list-group-item-action'); addClass('thirdback', 'hidden'); removeClass('secondback', 'hidden'); addClass('secondback', 'btn btn-link pull-right');"><span class="glyphicon glyphicon-arrow-left"></span></button>
     <table id="shopTable" class="table">
         <tbody>
             <tr>
@@ -62,8 +65,8 @@
 
     <span class="pull-right">Value of the order: <b id="fullp"></b></span><br /><br />
 
-    <button id="placeanorder" type="button" class="list-group-item list-group-item-action" onclick="removeClass('form', 'hidden'); removeClass('paymenttype', 'hidden'); addClass('placeanorder', 'hidden');">PLACE AN ORDER</button>
-    <button id="paymenttype" type="button" class="list-group-item list-group-item-action hidden" onclick="removeClass('paypal-button-container', 'hidden');  addClass('paymenttype', 'hidden'); addClass('form', 'hidden');">SELECT PAYMENT METHOD</button>
+    <button id="placeanorder" type="button" class="list-group-item list-group-item-action" onclick="removeClass('form', 'hidden'); removeClass('paymenttype', 'hidden'); removeClass('secondback', 'hidden'); addClass('firstback', 'hidden'); addClass('paymenttype', 'list-group-item list-group-item-action'); addClass('placeanorder', 'hidden'); addClass('secondback', 'btn btn-link pull-right');">PLACE AN ORDER</button>
+    <button id="paymenttype" type="button" class="list-group-item list-group-item-action hidden" onclick="removeClass('paypal-button-container', 'hidden'); removeClass('thirdback', 'hidden'); addClass('secondback', 'hidden'); addClass('paymenttype', 'hidden'); addClass('form', 'hidden'); addClass('thirdback', 'btn btn-link pull-right');">SELECT PAYMENT METHOD</button>
 </div>
 <div id="foodmenu" class="col-lg-12">
     <!--<div class="col-lg-6">-->
