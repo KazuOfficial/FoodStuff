@@ -17,20 +17,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <button id="cart" type="button" class="nav navbar-toggle navbar-btn btn-link hidden" onclick="removeClass('shop', 'hidden');">
-                    <span class="glyphicon glyphicon-shopping-cart"></span>
-                </button>
                 @Html.ActionLink("FoodStuff", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-
             <div class="navbar-collapse collapse">
-                <!--<ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                Duh123#-->
                 @Html.Partial("_LoginPartial")
+                <button id="cart" type="button" class="btn navbar-brand btn-link navbar-right" style="display: none;" onclick="removeClass('shop', 'hidden'); removeClass('foodmenu', 'col-lg-12'); addClass('foodmenu', 'col-lg-6'); animShop();">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                </button>
             </div>
         </div>
     </div>

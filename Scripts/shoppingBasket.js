@@ -26,6 +26,15 @@ function addClass(divname, classname) {
     console.log("Added class: " + classname + " to div: " + divname);
 }
 
+function addStyle(styleDiv, styleId, value) {
+    document.getElementById(styleDiv).style[styleId] = value;
+}
+
+function addItem(name, price) {
+    names.push(name);
+    prices.push(price);
+}
+
 function addRow() {
 
     var tableRef = document.getElementById('shopTable').getElementsByTagName('tbody')[0];
@@ -52,11 +61,6 @@ function addRow() {
     counter++;
 }
 
-function addItem(name, price) {
-    names.push(name);
-    prices.push(price);
-}
-
 function fullPrice() {
     //var fullP = prices.map();
     var fullP = prices.reduce(function (a, b) {
@@ -68,8 +72,20 @@ function fullPrice() {
     document.getElementById("fullp").innerHTML = "$" + fullP;
 }
 
+function animFade (fadeDiv, value) {
+    $(fadeDiv).fadeIn(value);
+}
+
 function cartScript() {
     if (names.length >= 1) {
-        removeClass("cart", "hidden");
+        animFade('#cart', 500);
     }
+    else if (names.length <= 0) {
+        addStyle('#cart', 'display', 'none')
+    }
+}
+
+function animShop() {
+    $("#shop").animate({ top: "+=15" }, 400);
+    $("#shop").animate({ top: "-=15" }, 300);
 }
