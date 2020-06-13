@@ -5,9 +5,9 @@
 }
 
 <hr />
-<div id="shop" class="col-lg-6 pull-right jumbotron hidden">
+<div id="shop" class="col-lg-6 col-xs-12 pull-right jumbotron hidden">
     Your order
-    <button type="button" class="btn btn-link pull-right"><span class="glyphicon glyphicon-arrow-left"></span></button>
+    <button type="button" class="btn btn-link pull-right" onclick="addClass('shop', 'hidden col-lg-6 pull-right jumbotron'); removeClass('foodmenu', 'col-lg-6'); addClass('foodmenu', 'col-lg-12');"><span class="glyphicon glyphicon-arrow-left"></span></button>
     <table id="shopTable" class="table">
         <tbody>
             <tr>
@@ -63,7 +63,7 @@
     <span class="pull-right">Value of the order: <b id="fullp"></b></span><br /><br />
 
     <button id="placeanorder" type="button" class="list-group-item list-group-item-action" onclick="removeClass('form', 'hidden'); removeClass('paymenttype', 'hidden'); addClass('placeanorder', 'hidden');">PLACE AN ORDER</button>
-    <button id="paymenttype" type="button" class="list-group-item list-group-item-action hidden" onclick="removeClass('paypal-button-container', 'hidden');  addClass('paymenttype', 'hidden'); addClass('form', 'hidden');">SELECT PAYMENT TYPE</button>
+    <button id="paymenttype" type="button" class="list-group-item list-group-item-action hidden" onclick="removeClass('paypal-button-container', 'hidden');  addClass('paymenttype', 'hidden'); addClass('form', 'hidden');">SELECT PAYMENT METHOD</button>
 </div>
 <div id="foodmenu" class="col-lg-12">
     <!--<div class="col-lg-6">-->
@@ -71,7 +71,7 @@
         @foreach (var item in Model)
         {
             <h4>@Html.DisplayFor(modelItem => item.Category)</h4>
-            <button type="button" class="list-group-item list-group-item-action" onclick="removeClass('shop', 'hidden'); addItem('@(item.Name)', @(item.Price)); addRow(); fullPrice();">
+            <button type="button" class="list-group-item list-group-item-action" onclick="removeClass('shop', 'hidden'); removeClass('foodmenu', 'col-lg-12'); addClass('foodmenu', 'col-lg-6'); addItem('@(item.Name)', @(item.Price)); addRow(); fullPrice(); cartScript();">
                 <span class="badge badge-primary badge">$@Html.DisplayFor(modelItem => item.Price)</span>
                 @Html.DisplayFor(modelItem => item.Name)<br />
                 <small>@Html.DisplayFor(modelItem => item.Description)</small>

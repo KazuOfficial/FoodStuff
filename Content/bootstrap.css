@@ -5221,6 +5221,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     border-radius: 0;
 }
 
+
     .navbar-toggle:focus {
         outline: 0;
     }

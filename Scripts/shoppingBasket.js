@@ -9,21 +9,21 @@ function removeClass(divname, classname) {
     var element = document.getElementById(divname);
     element.classList.remove(classname);
 
-    var secondelement = document.getElementById("foodmenu");
-    element.classList.remove("col-lg-12");
-    secondelement.className = "col-lg-6";
-
     if (flag == 1) {
         $("#shop").animate({ top: "+=15" }, 400);
         $("#shop").animate({ top: "-=15" }, 300);
         flag = 0;
     }
+
+    console.log("Removed class: " + classname + " from div: " + divname);
 }
 
 function addClass(divname, classname) {
 
     var element = document.getElementById(divname);
     element.className = classname;
+
+    console.log("Added class: " + classname + " to div: " + divname);
 }
 
 function addRow() {
@@ -66,4 +66,10 @@ function fullPrice() {
     fullP = parseFloat(fullP).toFixed(2);
 
     document.getElementById("fullp").innerHTML = "$" + fullP;
+}
+
+function cartScript() {
+    if (names.length >= 1) {
+        removeClass("cart", "hidden");
+    }
 }
