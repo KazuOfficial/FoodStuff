@@ -28,6 +28,7 @@ namespace FoodStuffManager
 
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
             "~/scripts/shoppingBasket.js",
+            "~/scripts/UIManager.js",
             "~/scripts/child.js"));
         }
     }

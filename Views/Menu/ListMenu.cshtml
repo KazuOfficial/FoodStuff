@@ -7,20 +7,13 @@
 <hr />
 <div id="shop" class="col-lg-6 col-xs-12 pull-right jumbotron hidden">
     Your order
-    <!-- TODO: PACK THESE UGLY CLASSES INTO ONE SCRIPT -->
-    <button id="firstback" type="button" class="btn btn-link pull-right" onclick="addClass('shop', 'hidden col-lg-6 pull-right jumbotron'); removeClass('foodmenu', 'col-lg-6'); addClass('foodmenu', 'col-lg-12');"><span class="glyphicon glyphicon-arrow-left"></span></button>
-    <button id="secondback" type="button" class="btn btn-link pull-right hidden" onclick="addClass('form', 'hidden'); addClass('paymenttype', 'hidden'); removeClass('placeanorder', 'hidden'); addClass('placeanorder', 'list-group-item list-group-item-action'); removeClass('firstback', 'hidden'); addClass('secondback', 'hidden'); addClass('firstback', 'btn btn-link pull-right');"><span class="glyphicon glyphicon-arrow-left"></span></button>
-    <button id="thirdback" type="button" class="btn btn-link pull-right hidden" onclick="addClass('paypal-button-container', 'hidden'); removeClass('form', 'hidden'); removeClass('paymenttype', 'hidden'); addClass('paymenttype', 'list-group-item list-group-item-action'); addClass('thirdback', 'hidden'); removeClass('secondback', 'hidden'); addClass('secondback', 'btn btn-link pull-right');"><span class="glyphicon glyphicon-arrow-left"></span></button>
+    <button id="firstback" type="button" class="btn btn-link pull-right" onclick="Firstback();"><span class="glyphicon glyphicon-arrow-left"></span></button>
+    <button id="secondback" type="button" class="btn btn-link pull-right hidden" onclick="Secondback();"><span class="glyphicon glyphicon-arrow-left"></span></button>
+    <button id="thirdback" type="button" class="btn btn-link pull-right hidden" onclick="Thirdback();"><span class="glyphicon glyphicon-arrow-left"></span></button>
     <table id="shopTable" class="table">
         <tbody>
             <tr>
-                <!--<td>
-                     <button type="button">
-                        <svg class="bi bi-trash-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
-                        </svg>
-                    </button>
-                </td>-->
+                <!-- stuff -->
             </tr>
         </tbody>
     </table>
@@ -65,8 +58,8 @@
 
     <span class="pull-right">Value of the order: <b id="fullp"></b></span><br /><br />
 
-    <button id="placeanorder" type="button" class="list-group-item list-group-item-action" onclick="removeClass('form', 'hidden'); removeClass('paymenttype', 'hidden'); removeClass('secondback', 'hidden'); addClass('firstback', 'hidden'); addClass('paymenttype', 'list-group-item list-group-item-action'); addClass('placeanorder', 'hidden'); addClass('secondback', 'btn btn-link pull-right');">PLACE AN ORDER</button>
-    <button id="paymenttype" type="button" class="list-group-item list-group-item-action hidden" onclick="removeClass('paypal-button-container', 'hidden'); removeClass('thirdback', 'hidden'); addClass('secondback', 'hidden'); addClass('paymenttype', 'hidden'); addClass('form', 'hidden'); addClass('thirdback', 'btn btn-link pull-right');">SELECT PAYMENT METHOD</button>
+    <button id="placeanorder" type="button" class="list-group-item list-group-item-action" onclick="PlaceAnOrder();">PLACE AN ORDER</button>
+    <button id="paymenttype" type="button" class="list-group-item list-group-item-action hidden" onclick="PaymentType();">SELECT PAYMENT METHOD</button>
 </div>
 <div id="foodmenu" class="col-lg-12">
     <!--<div class="col-lg-6">-->
