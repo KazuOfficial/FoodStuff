@@ -35,6 +35,11 @@ function addItem(name, price) {
     prices.push(price);
 }
 
+function removeItem() {
+    names.splice(0);
+    prices.splice(0);
+}
+
 function addRow() {
 
     var tableRef = document.getElementById('shopTable').getElementsByTagName('tbody')[0];
@@ -50,15 +55,19 @@ function addRow() {
     var newPrice = document.createTextNode("$" + prices[counter]);
 
     var btntag = document.createElement("button");
-    var spantag = document.createElement("span");
-    btntag.className = "btn btn-link";
-    spantag.className = "glyphicon glyphicon-trash";
+    btntag.type = "button";
+    btntag.className = "btn btn-link btn-xs";
+    btntag.setAttribute("onclick", "removeItem();");
+
+    var dateString = '<span class="glyphicon glyphicon-trash"></span>';
+    btntag.innerHTML = dateString;
 
     indexCell.appendChild(newText);
     nameCell.appendChild(newName);
     priceCell.appendChild(newPrice);
-    binCell.appendChild(btntag.appendChild(spantag));
+    binCell.appendChild(btntag);
     counter++;
+    console.log(names);
 }
 
 function fullPrice() {
