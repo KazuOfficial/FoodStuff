@@ -68,7 +68,7 @@
         @foreach (var item in Model)
         {
             <h4>@Html.DisplayFor(modelItem => item.Category)</h4>
-            <button type="button" class="list-group-item list-group-item-action" onclick="removeClass('shop', 'hidden'); removeClass('foodmenu', 'col-lg-12'); addClass('foodmenu', 'col-lg-6'); addItem('@(item.Name)', @(item.Price)); addRow(); fullPrice(); cartScript();">
+            <button type="button" class="list-group-item list-group-item-action" onclick="removeClass('shop', 'hidden'); removeClass('foodmenu', 'col-lg-12'); addClass('foodmenu', 'col-lg-6'); addItem('@(item.Name)', @(item.Price)); addRow('@(item.Name)', @(item.Price)); fullPrice(); cartScript();">
                 <span class="badge badge-primary badge">$@Html.DisplayFor(modelItem => item.Price)</span>
                 @Html.DisplayFor(modelItem => item.Name)<br />
                 <small>@Html.DisplayFor(modelItem => item.Description)</small>

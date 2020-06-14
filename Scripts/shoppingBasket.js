@@ -10,8 +10,7 @@ function removeClass(divname, classname) {
     element.classList.remove(classname);
 
     if (flag == 1) {
-        $("#shop").animate({ top: "+=15" }, 400);
-        $("#shop").animate({ top: "-=15" }, 300);
+        animShop();
         flag = 0;
     }
 
@@ -35,12 +34,13 @@ function addItem(name, price) {
     prices.push(price);
 }
 
-function removeItem() {
-    names.splice(0);
-    prices.splice(0);
+function removeItem(atd, datd) {
+    names.splice(names.indexOf(atd), 1);
+    prices.splice(prices.indexOf(datd), 1);
+    console.log(names);
 }
 
-function addRow() {
+function addRow(at, dat) {
 
     var tableRef = document.getElementById('shopTable').getElementsByTagName('tbody')[0];
     var newRow = tableRef.insertRow();
@@ -57,7 +57,7 @@ function addRow() {
     var btntag = document.createElement("button");
     btntag.type = "button";
     btntag.className = "btn btn-link btn-xs";
-    btntag.setAttribute("onclick", "removeItem();");
+    btntag.setAttribute("onclick", "removeItem(" + at + "," + dat + ");");
 
     var dateString = '<span class="glyphicon glyphicon-trash"></span>';
     btntag.innerHTML = dateString;
@@ -68,6 +68,8 @@ function addRow() {
     binCell.appendChild(btntag);
     counter++;
     console.log(names);
+    console.log(prices);
+    console.log(counter);
 }
 
 function fullPrice() {
