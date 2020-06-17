@@ -40,6 +40,7 @@ function fullPrice() {
         return a + b;
     }, 0);
 
+    //fullP = parseFloat(fullP).toFixed(2) - 2.0;
     fullP = parseFloat(fullP).toFixed(2);
 
     document.getElementById("fullp").innerHTML = "$" + fullP;
@@ -69,7 +70,10 @@ function removeItem(atd, datd) {
 
     if (names.length < 1) {
         Firstback();
+        $("#cart").fadeOut(100);
     }
+
+    //fullP = fullP - prices.indexOf(datd);
     //TODO: Fullprice - removed item
 }
 
@@ -123,9 +127,6 @@ function animFade (fadeDiv, value) {
 function cartScript() {
     if (names.length >= 1) {
         animFade('#cart', 500);
-    }
-    else if (names.length < 0) {
-        addStyle('#cart', 'display', 'none');
     }
 }
 
