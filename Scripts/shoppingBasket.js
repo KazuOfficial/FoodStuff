@@ -1,4 +1,5 @@
 ﻿var flag = 1;
+var i;
 
 var names = [];
 var prices = [];
@@ -34,22 +35,42 @@ function addItem(name, price) {
     prices.push(price);
 }
 
+function fullPrice() {
+    var fullP = prices.reduce(function (a, b) {
+        return a + b;
+    }, 0);
+
+    fullP = parseFloat(fullP).toFixed(2);
+
+    document.getElementById("fullp").innerHTML = "$" + fullP;
+}
+
 function removeItem(atd, datd) {
+
+    var stuff = document.getElementById(atd);
+
     names.splice(names.indexOf(atd), 1);
     prices.splice(prices.indexOf(datd), 1);
 
-    var stuff = document.getElementById(atd);
     console.log("[RemoveItem] Removed " + atd);
     console.log("[RemoveItem] showing 'names' list ");
     console.log(names);
-    
-    var i;
-    for (i = 0; i < 5; i++) {
-        //stuff.parentNode.removeChild(stuff);
+    console.log("[RemoveItem] Removed " + datd);
+    console.log("[RemoveItem] showing 'prices' list ");
+    console.log(prices);
+
+    for (i = 0; i < 4; i++) {
+        var stuff = document.getElementById(atd);
+        stuff.remove();
         console.log("[RemoveItem] showing var 'i': " + i);
     }
 
     counter--;
+
+    if (names.length < 1) {
+        Firstback();
+    }
+    //TODO: Fullprice - removed item
 }
 
 function addRow(at, dat) {
@@ -95,17 +116,6 @@ function addRow(at, dat) {
     console.log(counter);
 }
 
-function fullPrice() {
-    //var fullP = prices.map();
-    var fullP = prices.reduce(function (a, b) {
-        return a + b;
-    }, 0);
-
-    fullP = parseFloat(fullP).toFixed(2);
-
-    document.getElementById("fullp").innerHTML = "$" + fullP;
-}
-
 function animFade (fadeDiv, value) {
     $(fadeDiv).fadeIn(value);
 }
@@ -114,8 +124,8 @@ function cartScript() {
     if (names.length >= 1) {
         animFade('#cart', 500);
     }
-    else if (names.length <= 0) {
-        addStyle('#cart', 'display', 'none')
+    else if (names.length < 0) {
+        addStyle('#cart', 'display', 'none');
     }
 }
 
