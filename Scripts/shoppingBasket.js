@@ -37,7 +37,19 @@ function addItem(name, price) {
 function removeItem(atd, datd) {
     names.splice(names.indexOf(atd), 1);
     prices.splice(prices.indexOf(datd), 1);
+
+    var stuff = document.getElementById(atd);
+    console.log("[RemoveItem] Removed " + atd);
+    console.log("[RemoveItem] showing 'names' list ");
     console.log(names);
+    
+    var i;
+    for (i = 0; i < 5; i++) {
+        //stuff.parentNode.removeChild(stuff);
+        console.log("[RemoveItem] showing var 'i': " + i);
+    }
+
+    counter--;
 }
 
 function addRow(at, dat) {
@@ -46,9 +58,16 @@ function addRow(at, dat) {
     var newRow = tableRef.insertRow();
 
     var indexCell = newRow.insertCell(0);
+    indexCell.setAttribute("id", at);
+
     var nameCell = newRow.insertCell(1);
+    nameCell.setAttribute("id", at);
+
     var priceCell = newRow.insertCell(2);
+    priceCell.setAttribute("id", at);
+
     var binCell = newRow.insertCell(3);
+    binCell.setAttribute("id", at);
 
     var newText = document.createTextNode("x1");
     var newName = document.createTextNode(names[counter]);
@@ -57,7 +76,7 @@ function addRow(at, dat) {
     var btntag = document.createElement("button");
     btntag.type = "button";
     btntag.className = "btn btn-link btn-xs";
-    btntag.setAttribute("onclick", "removeItem(" + at + "," + dat + ");");
+    btntag.setAttribute("onclick", "removeItem('" + at + "','" + dat + "');");
 
     var dateString = '<span class="glyphicon glyphicon-trash"></span>';
     btntag.innerHTML = dateString;
@@ -67,8 +86,12 @@ function addRow(at, dat) {
     priceCell.appendChild(newPrice);
     binCell.appendChild(btntag);
     counter++;
+
+    console.log("[addRow] showing 'names'")
     console.log(names);
+    console.log("[addRow] showing 'prices'")
     console.log(prices);
+    console.log("[addRow] showing 'counter'")
     console.log(counter);
 }
 
