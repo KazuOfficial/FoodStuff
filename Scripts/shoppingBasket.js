@@ -1,5 +1,6 @@
 ﻿var flag = 1;
 var i;
+var subtract = 0;
 
 var names = [];
 var prices = [];
@@ -37,6 +38,7 @@ function addItem(name, price) {
 
 function fullPrice() {
     var fullP = prices.reduce(function (a, b) {
+        a = a - subtract;
         return a + b;
     }, 0);
 
@@ -53,12 +55,12 @@ function removeItem(atd, datd) {
     names.splice(names.indexOf(atd), 1);
     prices.splice(prices.indexOf(datd), 1);
 
-    console.log("[RemoveItem] Removed " + atd);
+    /*console.log("[RemoveItem] Removed " + atd);
     console.log("[RemoveItem] showing 'names' list ");
     console.log(names);
     console.log("[RemoveItem] Removed " + datd);
     console.log("[RemoveItem] showing 'prices' list ");
-    console.log(prices);
+    console.log(prices);*/
 
     for (i = 0; i < 4; i++) {
         var stuff = document.getElementById(atd);
@@ -73,7 +75,11 @@ function removeItem(atd, datd) {
         $("#cart").fadeOut(100);
     }
 
-    //fullP = fullP - prices.indexOf(datd);
+    var presubtract = parseFloat(datd).toFixed(2);
+    console.log('subtract: ' + subtract);
+    console.log('presubtract: ' + presubtract);
+    console.log('datd: ' + datd);
+    fullPrice();
     //TODO: Fullprice - removed item
 }
 
@@ -112,12 +118,12 @@ function addRow(at, dat) {
     binCell.appendChild(btntag);
     counter++;
 
-    console.log("[addRow] showing 'names'")
+    /*console.log("[addRow] showing 'names'")
     console.log(names);
     console.log("[addRow] showing 'prices'")
     console.log(prices);
     console.log("[addRow] showing 'counter'")
-    console.log(counter);
+    console.log(counter);*/
 }
 
 function animFade (fadeDiv, value) {
