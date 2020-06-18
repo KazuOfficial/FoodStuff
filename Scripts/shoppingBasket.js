@@ -76,11 +76,10 @@ function removeItem(atd, datd) {
     }
 
     var presubtract = parseFloat(datd).toFixed(2);
-    console.log('subtract: ' + subtract);
+    /*console.log('subtract: ' + subtract);
     console.log('presubtract: ' + presubtract);
-    console.log('datd: ' + datd);
+    console.log('datd: ' + datd);*/
     fullPrice();
-    //TODO: Fullprice - removed item
 }
 
 function addRow(at, dat) {
@@ -139,4 +138,12 @@ function cartScript() {
 function animShop() {
     $("#shop").animate({ top: "+=15" }, 400);
     $("#shop").animate({ top: "-=15" }, 300);
+}
+
+//if span z spanid equals 420 then change 420 to CLOSED
+function closedFunction(duh) {
+    var span = document.getElementById(duh);
+    if (span.contains("420AM")) {
+        console.log("kurwamac420");
+    }
 }

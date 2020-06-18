@@ -1,8 +1,12 @@
-﻿using System;
+﻿using FoodStuffManager.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DataLibrary;
+using static DataLibrary.Logic.MenuProcessor;
+using System.Dynamic;
 
 namespace FoodStuffManager.Controllers
 {
@@ -10,7 +14,26 @@ namespace FoodStuffManager.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var data = LoadRestaurant();
+
+            List<RestaurantModel> restaurants = new List<RestaurantModel>();
+
+            foreach (var row in data)
+            {
+                restaurants.Add(new RestaurantModel
+                {
+                    Name = row.Name,
+                    City = row.City,
+                    Street = row.Street,
+                    OpenHour = row.OpenHour,
+                    CloseHour = row.CloseHour,
+                    Href1 = row.Href1,
+                    Href2 = row.Href2,
+                    Classes = row.Classes
+                });
+            }
+
+            return View(restaurants);
         }
 
         [Authorize(Roles = "Admin")]
@@ -33,7 +56,6 @@ namespace FoodStuffManager.Controllers
         [Authorize]
         public ActionResult Orders()
         {
-
             return View();
         }
     }

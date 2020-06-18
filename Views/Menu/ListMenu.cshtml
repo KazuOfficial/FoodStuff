@@ -10,6 +10,14 @@
 <!-- TODO: Categories coś z id category i potem teleport do danej sekcji -->
 
 <hr />
+<!--<div id="categories">
+    <div class="list-group-item-danger">
+        @*foreach (var item in Model)
+        {
+            <button type="button">@Html.DisplayFor(modelItem => item.Category)</button>
+        }*@
+    </div>
+</div>-->
 <div id="shop" class="col-lg-6 col-xs-12 pull-right jumbotron hidden">
     Your order
     <button id="firstback" type="button" class="btn btn-link pull-right" onclick="Firstback();"><span class="glyphicon glyphicon-arrow-left"></span></button>
@@ -71,7 +79,7 @@
     <div class="list-group">
         @foreach (var item in Model)
         {
-            <h4>@Html.DisplayFor(modelItem => item.Category)</h4>
+            <h4 id="@(item.Category)">@Html.DisplayFor(modelItem => item.Category)</h4>
             <button type="button" class="list-group-item list-group-item-action" onclick="removeClass('shop', 'hidden'); removeClass('foodmenu', 'col-lg-12'); addClass('foodmenu', 'col-lg-6'); addItem('@(item.Name)', @(item.Price)); addRow('@(item.Name)', @(item.Price)); fullPrice(); cartScript();">
                 <span class="badge badge-primary badge">$@Html.DisplayFor(modelItem => item.Price)</span>
                 @Html.DisplayFor(modelItem => item.Name)<br />
