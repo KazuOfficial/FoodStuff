@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.fixedElement {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 60px;
+}

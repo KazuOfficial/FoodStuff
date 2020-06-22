@@ -1,5 +1,5 @@
 ﻿function Firstback() {
-    addClass('shop', 'hidden col-lg-6 col-xs-12 pull-right jumbotron');
+    addClass('shop', 'hidden col-lg-6 col-xs-12 pull-right jumbotron fixedElement');
     removeClass('foodmenu', 'col-lg-6');
     addClass('foodmenu', 'col-lg-12');
 }
