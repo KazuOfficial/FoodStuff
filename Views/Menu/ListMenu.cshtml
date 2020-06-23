@@ -1,18 +1,18 @@
-﻿@model IEnumerable<FoodStuffManager.Models.MenuModel>
+﻿@model FoodStuffManager.Models.ViewModel
 
 @{
     ViewBag.Title = "ListMenu";
 }
 
 <hr />
-<!--<div id="categories">
-    <div class="list-group-item-danger">
-        @*foreach (var item in Model)
+<div id="categories">
+    <div class="list-group-item">
+        @foreach (var item in Model.Categories)
         {
-            <button type="button">@Html.DisplayFor(modelItem => item.Category)</button>
-        }*@
+            <button type="button" class="btn btn-link">@Html.DisplayFor(modelItem => item.CategoryBar)</button>
+        }
     </div>
-</div>-->
+</div>
 <div id="shop" class="col-lg-6 col-xs-12 pull-right jumbotron hidden fixedElement">
     Your order
     <button id="firstback" type="button" class="btn btn-link pull-right" onclick="Firstback();"><span class="glyphicon glyphicon-arrow-left"></span></button>
@@ -72,7 +72,7 @@
 </div>
 <div id="foodmenu" class="col-lg-12 col-xs-12">
     <div class="list-group">
-        @foreach (var item in Model)
+        @foreach (var item in Model.Menus)
         {
             <h4 id="@(item.Category)">@Html.DisplayFor(modelItem => item.Category)</h4>
             <button type="button" class="list-group-item list-group-item-action" onclick="removeClass('shop', 'hidden'); removeClass('foodmenu', 'col-lg-12'); addClass('foodmenu', 'col-lg-6 col-xs-12'); addItem('@(item.Name)', @(item.Price)); addRow('@(item.Name)', @(item.Price)); fullPrice(); cartScript();">

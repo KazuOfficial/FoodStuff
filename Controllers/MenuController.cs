@@ -20,11 +20,13 @@ namespace FoodStuffManager.Controllers
 
         public ActionResult ListMenu()
         {
-            var data = LoadMenu();
+            ViewModel mymodel = new ViewModel();
+
+            var menudata = LoadMenu();
 
             List<MenuModel> menus = new List<MenuModel>();
 
-            foreach (var row in data)
+            foreach (var row in menudata)
             {
                 menus.Add(new MenuModel
                 {
@@ -35,7 +37,22 @@ namespace FoodStuffManager.Controllers
                 });
             }
 
-            return View(menus);
+            var categoriesdata = LoadCategories();
+
+            List<CategoryModel> categorieslist = new List<CategoryModel>();
+
+            foreach (var row in categoriesdata)
+            {
+                categorieslist.Add(new CategoryModel
+                {
+                    CategoryBar = row.CategoryBar
+                });
+            }
+
+            mymodel.Menus = menus;
+            mymodel.Categories = categorieslist;
+
+            return View(mymodel);
         }
 
     }
