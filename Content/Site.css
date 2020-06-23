@@ -28,3 +28,7 @@ textarea {
     position: sticky;
     top: 60px;
 }
+
+#categories {
+    font-family: 'Halant', serif;
+}
