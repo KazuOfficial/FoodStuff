@@ -5,11 +5,11 @@
 }
 
 <hr />
-<div id="categories">
+<div id="categories" class="col-lg-12 col-xs-12">
     <div class="list-group-item">
         @foreach (var item in Model.Categories)
         {
-            <button type="button" class="btn btn-link">@Html.DisplayFor(modelItem => item.CategoryBar)</button>
+            <button class="btn btn-link" type="button" onclick="scrollToO(@item.CategoryBar);">@Html.DisplayFor(modelItem => item.CategoryBar)</button>
         }
     </div>
 </div>

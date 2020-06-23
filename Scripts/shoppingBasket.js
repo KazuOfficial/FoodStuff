@@ -147,3 +147,9 @@ function closedFunction(duh) {
         console.log("kurwamac420");
     }
 }
+
+function scrollToO(scrolldiv) {
+    $('html, body').animate({
+        scrollTop: $(scrolldiv).offset().top
+    }, 1000);
+}
