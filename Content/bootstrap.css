@@ -8486,3 +8486,8 @@ input[type="checkbox"] {
 .modal .close {
     color: #222222;
 }
+
+.button:focus,
+button:focus {
+    outline: none !important;
+}
