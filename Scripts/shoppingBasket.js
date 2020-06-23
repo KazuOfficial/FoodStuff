@@ -150,6 +150,6 @@ function closedFunction(duh) {
 
 function scrollToO(scrolldiv) {
     $('html, body').animate({
-        scrollTop: $(scrolldiv).offset().top - 50
+        scrollTop: $(scrolldiv).offset().top - 105
     }, 800);
 }
