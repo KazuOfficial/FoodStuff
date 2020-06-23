@@ -6331,6 +6331,10 @@ a.thumbnail.active {
     margin-bottom: 20px;
 }
 
+.circle {
+    border-radius: 18px;
+}
+
 .list-group-item-bar {
     position: relative;
     display: block;
