@@ -123,6 +123,7 @@ function addRow(at, dat) {
     console.log(prices);
     console.log("[addRow] showing 'counter'")
     console.log(counter);*/
+    countDuplicates();
 }
 
 function animFade (fadeDiv, value) {
@@ -152,4 +153,11 @@ function scrollToO(scrolldiv) {
     $('html, body').animate({
         scrollTop: $(scrolldiv).offset().top - 105
     }, 800);
+}
+
+function countDuplicates() {
+    var result = {};
+    names.forEach(function (x) { result[x] = (result[x] || 0) + 1; });
+    console.log(result);
+    console.log(names);
 }
