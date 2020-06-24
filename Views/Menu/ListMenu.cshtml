@@ -36,7 +36,6 @@
         <hr />
     </div>
 
-    <!-- TODO: Back-end -->
     <div id="paypal-button-container" class="form-group hidden"></div>
     <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
     <script>
@@ -75,7 +74,7 @@
         @foreach (var item in Model.Menus)
         {
             <h4 id="@(item.Category)">@Html.DisplayFor(modelItem => item.Category)</h4>
-            <button type="button" class="list-group-item list-group-item-action circle" onclick="removeClass('shop', 'hidden'); removeClass('foodmenu', 'col-lg-12'); addClass('foodmenu', 'col-lg-6 col-xs-12'); addItem('@(item.Name)', @(item.Price)); addRow('@(item.Name)', @(item.Price)); fullPrice(); cartScript();">
+            <button type="button" class="list-group-item list-group-item-action circle" onclick="removeClass('shop', 'hidden'); removeClass('foodmenu', 'col-lg-12'); addClass('foodmenu', 'col-lg-6 col-xs-12'); addItem('@(item.Name)', @(item.Price)); addRow('@(item.Name)', @(item.Price)); fullPrice(); cartScript(); countDuplicates('@(item.Name)');">
                 <span class="badge badge-primary badge">$@Html.DisplayFor(modelItem => item.Price)</span>
                 @Html.DisplayFor(modelItem => item.Name)<br />
                 <small>@Html.DisplayFor(modelItem => item.Description)</small>
