@@ -1,4 +1,28 @@
-﻿function Firstback() {
+﻿(function ($, viewport) {
+    $(document).ready(function () {
+        // Execute code each time window size changes
+        $(window).resize(
+            viewport.changed(function () {
+                if (viewport.is('xs')) {
+                    removeClass("shop", "fixedElement");
+                    console.log("xs");
+                }
+
+                if (viewport.is('lg')) {
+                    MenuColChange();
+                    console.log("lg");
+                }
+
+                if (viewport.is('md')) {
+                    removeClass("shop", "fixedElement");
+                    console.log("md");
+                }
+            })
+        );
+    });
+})(jQuery, ResponsiveBootstrapToolkit);
+
+function Firstback() {
     addClass('shop', 'hidden col-lg-6 col-xs-12 pull-right jumbotron fixedElement');
     removeClass('foodmenu', 'col-lg-6');
     addClass('foodmenu', 'col-lg-12');
@@ -41,4 +65,16 @@ function PaymentType() {
     addClass('paymenttype', 'hidden circle');
     addClass('form', 'hidden');
     addClass('thirdback', 'btn btn-link pull-right');
+}
+
+function MenuColChange() {
+    var element = document.getElementById("shop");
+
+    if (element.classList.contains("hidden")) {
+        console.log("stuff's hidden");
+    }
+    else {
+        addClass('shop', 'col-lg-6 col-xs-12 pull-right jumbotron fixedElement');
+        addClass('foodmenu', 'col-lg-6');
+    }
 }
