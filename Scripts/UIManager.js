@@ -5,7 +5,9 @@
             viewport.changed(function () {
                 if (viewport.is('xs')) {
                     removeClass("shop", "fixedElement");
+                    //remove style margin top 40px
                     console.log("xs");
+                    removeStyle();
                 }
 
                 if (viewport.is('lg')) {
@@ -16,6 +18,7 @@
                 if (viewport.is('md')) {
                     removeClass("shop", "fixedElement");
                     console.log("md");
+                    removeStyle();
                 }
             })
         );
@@ -77,4 +80,9 @@ function MenuColChange() {
         addClass('shop', 'col-lg-6 col-xs-12 pull-right jumbotron fixedElement');
         addClass('foodmenu', 'col-lg-6');
     }
+}
+
+function removeStyle() {
+    var element = document.getElementById("shop");
+    element.style.removeProperty("top");
 }
