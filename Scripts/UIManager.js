@@ -1,4 +1,6 @@
-﻿(function ($, viewport) {
+﻿var flag = 0;
+
+(function ($, viewport) {
     $(document).ready(function () {
         // Execute code each time window size changes
         $(window).resize(
@@ -7,20 +9,23 @@
                     removeClass("shop", "fixedElement");
                     //remove style margin top 40px
                     console.log("xs");
-                    removeStyle();
+                    removeStyle("shop", "top");
+                    flag = 1;
                 }
 
                 if (viewport.is('lg')) {
                     MenuColChange();
                     console.log("lg");
+                    flag = 0;
                 }
 
                 if (viewport.is('md')) {
                     removeClass("shop", "fixedElement");
                     console.log("md");
-                    removeStyle();
+                    removeStyle("shop", "top");
+                    flag = 1;
                 }
-            })
+            }, 150)
         );
     });
 })(jQuery, ResponsiveBootstrapToolkit);
@@ -82,7 +87,13 @@ function MenuColChange() {
     }
 }
 
-function removeStyle() {
-    var element = document.getElementById("shop");
-    element.style.removeProperty("top");
+function removeStyle(div, style) {
+    var element = document.getElementById(div);
+    element.style.removeProperty(style);
+}
+
+function checkIf() {
+    if (flag = 1) {
+        removeClass("shop", "fixedElement");
+    }
 }
