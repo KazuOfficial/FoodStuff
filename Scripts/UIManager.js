@@ -1,29 +1,25 @@
-﻿var flag = 0;
+﻿var flag = false;
 
 (function ($, viewport) {
     $(document).ready(function () {
-        // Execute code each time window size changes
         $(window).resize(
             viewport.changed(function () {
                 if (viewport.is('xs')) {
+                    flag = true;
                     removeClass("shop", "fixedElement");
-                    //remove style margin top 40px
-                    console.log("xs");
                     removeStyle("shop", "top");
-                    flag = 1;
                 }
 
                 if (viewport.is('lg')) {
+                    flag = false;
                     MenuColChange();
-                    console.log("lg");
-                    flag = 0;
+                    removeStyle("shop", "top");
                 }
 
                 if (viewport.is('md')) {
+                    flag = true;
                     removeClass("shop", "fixedElement");
-                    console.log("md");
                     removeStyle("shop", "top");
-                    flag = 1;
                 }
             }, 150)
         );
@@ -93,7 +89,10 @@ function removeStyle(div, style) {
 }
 
 function checkIf() {
-    if (flag = 1) {
+    if (flag == true) {
         removeClass("shop", "fixedElement");
+    }
+    else {
+        console.log("nah");
     }
 }
