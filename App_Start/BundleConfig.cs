@@ -29,8 +29,10 @@ namespace FoodStuffManager
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
             "~/scripts/shoppingBasket.js",
             "~/scripts/UIManager.js",
-            "~/node_modules/responsive-toolkit/dist/bootstrap-toolkit.min.js",
             "~/scripts/child.js"));
+
+            bundles.Add(new StyleBundle("~/bundles/node").Include(
+                    "~/node_modules/responsive-toolkit/dist/bootstrap-toolkit.min.js"));
         }
     }
 }

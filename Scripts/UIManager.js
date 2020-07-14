@@ -1,4 +1,36 @@
-﻿function Firstback() {
+﻿var flag = 0;
+
+(function ($, viewport) {
+    $(document).ready(function () {
+        // Execute code each time window size changes
+        $(window).resize(
+            viewport.changed(function () {
+                if (viewport.is('xs')) {
+                    removeClass("shop", "fixedElement");
+                    //remove style margin top 40px
+                    console.log("xs");
+                    removeStyle("shop", "top");
+                    flag = 1;
+                }
+
+                if (viewport.is('lg')) {
+                    MenuColChange();
+                    console.log("lg");
+                    flag = 0;
+                }
+
+                if (viewport.is('md')) {
+                    removeClass("shop", "fixedElement");
+                    console.log("md");
+                    removeStyle("shop", "top");
+                    flag = 1;
+                }
+            }, 150)
+        );
+    });
+})(jQuery, ResponsiveBootstrapToolkit);
+
+function Firstback() {
     addClass('shop', 'hidden col-lg-6 col-xs-12 pull-right jumbotron fixedElement');
     removeClass('foodmenu', 'col-lg-6');
     addClass('foodmenu', 'col-lg-12');
@@ -41,4 +73,27 @@ function PaymentType() {
     addClass('paymenttype', 'hidden circle');
     addClass('form', 'hidden');
     addClass('thirdback', 'btn btn-link pull-right');
+}
+
+function MenuColChange() {
+    var element = document.getElementById("shop");
+
+    if (element.classList.contains("hidden")) {
+        console.log("stuff's hidden");
+    }
+    else {
+        addClass('shop', 'col-lg-6 col-xs-12 pull-right jumbotron fixedElement');
+        addClass('foodmenu', 'col-lg-6');
+    }
+}
+
+function removeStyle(div, style) {
+    var element = document.getElementById(div);
+    element.style.removeProperty(style);
+}
+
+function checkIf() {
+    if (flag = 1) {
+        removeClass("shop", "fixedElement");
+    }
 }
