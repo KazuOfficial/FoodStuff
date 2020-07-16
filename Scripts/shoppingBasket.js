@@ -58,7 +58,7 @@ function removeItem(atd, datd) {
     prices.splice(prices.indexOf(datd), 1);
 
     if (result[atd] > 1) {
-        console.log("shit");
+        console.log("stuff");
     }
     else {
         for (i = 0; i < 4; i++) {
@@ -108,7 +108,7 @@ function addRow(at, dat) {
     var btntag = document.createElement("button");
     btntag.type = "button";
     btntag.className = "btn btn-link btn-xs";
-    btntag.setAttribute("onclick", "removeItem('" + at + "','" + dat + "');");
+    btntag.setAttribute("onclick", "removeItem('" + at + "','" + dat + "'); DecreaseIndex('" + at + "');");
 
     var dateString = '<span class="glyphicon glyphicon-trash"></span>';
     btntag.innerHTML = dateString;
@@ -158,4 +158,10 @@ function FoodCounter(element) {
     names.forEach(function (x) { result[x] = (result[x] || 0) + 1; });
 
     return result[element];
+}
+
+function DecreaseIndex(atd) {
+    var newText = "x" + FoodCounter(atd);
+
+    document.getElementById(atd).innerHTML = newText;
 }
