@@ -49,15 +49,23 @@ function fullPrice() {
 
 function removeItem(atd, datd) {
 
+    var result = {};
+    names.forEach(function (x) { result[x] = (result[x] || 0) + 1; });
+
     var stuff = document.getElementById(atd);
 
     names.splice(names.indexOf(atd), 1);
     prices.splice(prices.indexOf(datd), 1);
 
-    for (i = 0; i < 4; i++) {
-        var stuff = document.getElementById(atd);
-        stuff.remove();
-        console.log("[RemoveItem] showing var 'i': " + i);
+    if (result[atd] > 1) {
+        console.log("shit");
+    }
+    else {
+        for (i = 0; i < 4; i++) {
+            var stuff = document.getElementById(atd);
+            stuff.remove();
+            console.log("[RemoveItem] showing var 'i': " + i);
+        }
     }
 
     counter--;
