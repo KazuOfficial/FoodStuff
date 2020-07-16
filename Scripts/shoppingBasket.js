@@ -6,8 +6,6 @@ var names = [];
 var prices = [];
 var counter = 0;
 
-var foodcounter = 1;
-
 function removeClass(divname, classname) {
 
     var element = document.getElementById(divname);
@@ -95,7 +93,7 @@ function addRow(at, dat) {
     var binCell = newRow.insertCell(3);
     binCell.setAttribute("id", at);
 
-    var newText = document.createTextNode("x" + foodcounter);
+    var newText = document.createTextNode("x" + FoodCounter(at));
     var newName = document.createTextNode(names[counter]);
     var newPrice = document.createTextNode("$" + prices[counter]);
 
@@ -135,6 +133,7 @@ function scrollToO(scrolldiv) {
     }, 800);
 }
 
+//Deletes a row if it's a duplicate
 function countDuplicates(element) {
     var result = {};
     names.forEach(function (x) { result[x] = (result[x] || 0) + 1; });
@@ -142,10 +141,13 @@ function countDuplicates(element) {
     if (result[element] > 1) {
         for (i = 0; i < 4; i++) {
             removeRow(element);
-            //foodcounter++;
         }
     }
+}
 
-    console.log(result);
-    console.log(result.Stopiatka);
+function FoodCounter(element) {
+    var result = {};
+    names.forEach(function (x) { result[x] = (result[x] || 0) + 1; });
+
+    return result[element];
 }
