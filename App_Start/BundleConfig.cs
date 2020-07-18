@@ -31,6 +31,9 @@ namespace FoodStuffManager
             "~/scripts/UIManager.js",
             "~/scripts/child.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/customIndex").Include(
+            "~/scripts/Time.js"));
+
             bundles.Add(new StyleBundle("~/bundles/node").Include(
                     "~/node_modules/responsive-toolkit/dist/bootstrap-toolkit.min.js"));
         }
