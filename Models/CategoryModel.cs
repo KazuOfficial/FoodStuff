@@ -7,6 +7,7 @@ namespace FoodStuffManager.Models
 {
     public class CategoryModel
     {
+        public int Id { get; set; }
         public string CategoryBar { get; set; }
     }
 }

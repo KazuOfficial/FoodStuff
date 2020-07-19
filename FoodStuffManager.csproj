@@ -185,7 +185,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MenuModel.cs" />
     <Compile Include="Models\RestaurantModel.cs" />
-    <Compile Include="Models\TimeModel.cs" />
     <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

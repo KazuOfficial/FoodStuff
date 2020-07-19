@@ -1,8 +1,10 @@
 ﻿window.onload = function () {
-    stuff();
+    setTimeout(stuff, 5000);
 };
 
 function stuff(openh, closeh, openm=0, closem=60) {
+
+    setTimeout(stuff, 5000);
 
     openh = 7;
     closeh = 21;
@@ -13,6 +15,8 @@ function stuff(openh, closeh, openm=0, closem=60) {
     var hours = today.getHours();
     var minutes = today.getMinutes();
 
+    //var getH = getHours();
+
     if (hours >= openh && hours < closeh && minutes >= openm && minutes < closem) {
         console.log("open");
     }
@@ -22,4 +26,22 @@ function stuff(openh, closeh, openm=0, closem=60) {
 
     console.log(time);
     setTimeout(stuff, 5000);
+}
+
+function getHours(element) {
+
+    var d = document.getElementById(element);
+    d = d.innerHTML;
+
+    var openh = d.split("").slice(0)[0];
+    var closeh = d.split("").slice(-3)[0];
+
+    console.log(openh);
+    console.log(closeh);
+
+    return [openh, closeh];
+
+    //var getH = getHours();
+    //var openh = getH[0];
+    //var closeh = getH[1];
 }

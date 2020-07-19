@@ -30,6 +30,7 @@ namespace FoodStuffManager.Controllers
             {
                 menus.Add(new MenuModel
                 {
+                    Id = row.Id,
                     Name = row.Name,
                     Description = row.Description,
                     Price = row.Price,

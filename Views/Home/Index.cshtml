@@ -5,6 +5,8 @@
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
 
+<script type="text/javascript" src="~/Scripts/Time.js"></script>
+
 <hr />
 <br />
 <br />
@@ -18,10 +20,11 @@
         {
             <a href="@Url.Action(item.Href1, item.Href2)" class="list-group-item list-group-item-action @(item.Classes)">
                 @Html.DisplayFor(modelItem => item.Name)
-                <span class="badge badge-primary badge">@Html.DisplayFor(modelItem => item.OpenHour)@Html.DisplayFor(modelItem => item.CloseHour)</span>
+                <span id="@Html.DisplayFor(modelItem => item.Id)" class="badge badge-primary badge">@Html.DisplayFor(modelItem => item.OpenHour)@Html.DisplayFor(modelItem => item.CloseHour)</span>
                 <br />
-                <small>@Html.DisplayFor(modelItem => item.City), @Html.DisplayFor(modelItem => item.Street)</small>
+                <small>@Html.DisplayFor(modelItem => item.Name), @Html.DisplayFor(modelItem => item.Street)</small>
             </a>
+            <script>getHours('@item.Id');</script>
         }
     </div>
     <br />

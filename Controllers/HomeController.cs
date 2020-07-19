@@ -22,6 +22,7 @@ namespace FoodStuffManager.Controllers
             {
                 restaurants.Add(new RestaurantModel
                 {
+                    Id = row.Id,
                     Name = row.Name,
                     City = row.City,
                     Street = row.Street,
