@@ -5,8 +5,6 @@
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
 
-<script type="text/javascript" src="~/Scripts/Time.js"></script>
-
 <hr />
 <br />
 <br />
@@ -22,9 +20,26 @@
                 @Html.DisplayFor(modelItem => item.Name)
                 <span id="@Html.DisplayFor(modelItem => item.Id)" class="badge badge-primary badge">@Html.DisplayFor(modelItem => item.OpenHour)@Html.DisplayFor(modelItem => item.CloseHour)</span>
                 <br />
-                <small>@Html.DisplayFor(modelItem => item.Name), @Html.DisplayFor(modelItem => item.Street)</small>
+                <small onclick="getHours('@item.Id');">@Html.DisplayFor(modelItem => item.Name), @Html.DisplayFor(modelItem => item.Street)</small>
             </a>
-            <script>getHours('@item.Id');</script>
+            <script>
+                function getHours() {
+
+                    var d = document.getElementById(@item.Id);
+                    d = d.innerHTML;
+
+                    var openh = d.split("").slice(0)[0];
+                    var closeh = d.split("").slice(-3)[0];
+
+                    return [openh, closeh];
+
+                    //var getH = getHours();
+                    //var openh = getH[0];
+                    //var closeh = getH[1];
+                }
+
+                stuff();
+            </script>
         }
     </div>
     <br />
