@@ -1,6 +1,0 @@
-D:\Users\Kazu\source\repos\FoodStuffManager\FoodStuffDB\bin\Debug\FoodStuffDB.dacpac
-D:\Users\Kazu\source\repos\FoodStuffManager\FoodStuffDB\bin\Debug\FoodStuffDB.dll
-D:\Users\Kazu\source\repos\FoodStuffManager\FoodStuffDB\bin\Debug\FoodStuffDB.pdb
-D:\Users\Kazu\source\repos\FoodStuffManager\FoodStuffDB\obj\Debug\FoodStuffDB.sqlprojAssemblyReference.cache
-D:\Users\Kazu\source\repos\FoodStuffManager\FoodStuffDB\obj\Debug\FoodStuffDB.dll
-D:\Users\Kazu\source\repos\FoodStuffManager\FoodStuffDB\obj\Debug\FoodStuffDB.pdb
