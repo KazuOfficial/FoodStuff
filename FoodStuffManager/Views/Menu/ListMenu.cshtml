@@ -1,0 +1,89 @@
+﻿@model FoodStuffManager.Models.ViewModel
+
+@{
+    ViewBag.Title = "ListMenu";
+}
+
+<script>
+    // Wrap IIFE around your code
+
+</script>
+
+<hr />
+<div id="categories" class="col-lg-12 col-xs-12 fixedBar">
+    <div class="list-group-item-bar text-center circle">
+        @foreach (var item in Model.Categories)
+        {
+            <button class="btn btn-link" type="button" onclick="scrollToO(@item.CategoryBar);">@Html.DisplayFor(modelItem => item.CategoryBar)</button>
+        }
+    </div>
+</div>
+<div id="shop" style="margin-top: 40px;" class="col-lg-6 col-xs-12 pull-right jumbotron hidden fixedElement">
+    Your order
+    <button id="firstback" type="button" class="btn btn-link pull-right" onclick="Firstback();"><span class="glyphicon glyphicon-arrow-left"></span></button>
+    <button id="secondback" type="button" class="btn btn-link pull-right hidden" onclick="Secondback();"><span class="glyphicon glyphicon-arrow-left"></span></button>
+    <button id="thirdback" type="button" class="btn btn-link pull-right hidden" onclick="Thirdback();"><span class="glyphicon glyphicon-arrow-left"></span></button>
+    <table id="shopTable" class="table">
+        <tbody>
+            <tr>
+                <!-- stuff -->
+            </tr>
+        </tbody>
+    </table>
+    <div id="form" class="form-group hidden">
+        <h4>Where do you want your order to be delivered?</h4>
+        <input type="text" class="form-control" placeholder="Name"><br />
+        <input type="text" class="form-control" placeholder="Address"><br />
+        <input type="text" class="form-control" placeholder="Flat number"><br />
+        <input type="text" class="form-control" placeholder="Phone"><br />
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"><br />
+        <input type="text" class="form-control" placeholder="Comments"><br />
+        <hr />
+    </div>
+
+    <div id="paypal-button-container" class="form-group hidden"></div>
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
+    <script>
+        paypal.Buttons({
+            style: {
+                shape: 'rect',
+                color: 'gold',
+                layout: 'vertical',
+                label: 'paypal',
+
+            },
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '1'
+                        }
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                });
+            }
+        }).render('#paypal-button-container');
+    </script>
+
+    <span class="pull-right">Value of the order: <b id="fullp"></b></span><br /><br />
+
+    <button id="placeanorder" type="button" class="list-group-item list-group-item-action circle" onclick="PlaceAnOrder();">PLACE AN ORDER</button>
+    <button id="paymenttype" type="button" class="list-group-item list-group-item-action circle hidden" onclick="PaymentType();">SELECT PAYMENT METHOD</button>
+</div>
+<div id="foodmenu" class="col-lg-12 col-xs-12">
+    <div class="list-group">
+        @foreach (var item in Model.Menus)
+        {
+            <h4 id="@(item.Category)">@Html.DisplayFor(modelItem => item.Category)</h4>
+            <button type="button" class="list-group-item list-group-item-action circle" onclick="removeClass('shop', 'hidden'); removeClass('foodmenu', 'col-lg-12'); addClass('foodmenu', 'col-lg-6 col-xs-12'); addItem('@(item.Name)', @(item.Price)); addRow('@(item.Name)', @(item.Price)); fullPrice(); cartScript(); countDuplicates('@(item.Name)'); checkIf();">
+                <span class="badge badge-primary badge">$@Html.DisplayFor(modelItem => item.Price)</span>
+                @Html.DisplayFor(modelItem => item.Name)<br />
+                <small>@Html.DisplayFor(modelItem => item.Description)</small>
+            </button>
+        }
+    </div>
+</div>

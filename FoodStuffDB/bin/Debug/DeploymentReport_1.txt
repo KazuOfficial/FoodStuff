@@ -1,0 +1,22 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column Description in table [dbo].[Menu] is currently  VARCHAR (100) NOT NULL but is being changed to 
+         VARCHAR (50) NOT NULL. Data loss could occur.
+
+** User actions
+     Alter
+       [dbo].[Menu] (Table)
+     Create
+       [dbo].[AspNetUsers] (Table)
+       [dbo].[AspNetUsers].[UserNameIndex] (Index)
+
+** Supporting actions
+
+The type for column Description in table [dbo].[Menu] is currently  VARCHAR (100) NOT NULL but is being changed to  VARCHAR (50) NOT NULL. Data loss could occur.
+
