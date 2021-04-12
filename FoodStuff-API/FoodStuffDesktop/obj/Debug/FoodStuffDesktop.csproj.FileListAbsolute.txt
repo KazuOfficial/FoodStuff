@@ -1,0 +1,15 @@
+D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\bin\Debug\FoodStuffDesktop.exe.config
+D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\bin\Debug\FoodStuffDesktop.exe
+D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\bin\Debug\FoodStuffDesktop.pdb
+D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\obj\Debug\FoodStuffDesktop.csprojAssemblyReference.cache
+D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\obj\Debug\MainWindow.g.cs
+D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\obj\Debug\App.g.cs
+D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\obj\Debug\FoodStuffDesktop_MarkupCompile.cache
+D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\obj\Debug\FoodStuffDesktop_MarkupCompile.lref
+D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\obj\Debug\MainWindow.baml
+D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\obj\Debug\FoodStuffDesktop.g.resources
+D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\obj\Debug\FoodStuffDesktop.Properties.Resources.resources
+D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\obj\Debug\FoodStuffDesktop.csproj.GenerateResource.cache
+D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\obj\Debug\FoodStuffDesktop.csproj.CoreCompileInputs.cache
+D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\obj\Debug\FoodStuffDesktop.exe
+D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\obj\Debug\FoodStuffDesktop.pdb
