@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\obj\Debug\
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\obj\Debug\
 FoodStuffDesktop
 none
 false
 DEBUG;TRACE
-D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuffDesktop\App.xaml
-2901202249
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\App.xaml
+3-305537709
 
-9816751436
-121654030071
-MainWindow.xaml;Views\ShellView.xaml;
+15-183050562
+124-1932787129
+MainWindow.xaml;Views\LoginView.xaml;Views\ShellView.xaml;
 
-True
+False
 
