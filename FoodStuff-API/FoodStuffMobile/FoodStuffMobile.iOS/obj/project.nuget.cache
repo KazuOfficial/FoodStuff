@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ks4zQbmx9PXCJfIP0JxR4LZ0T7lIxVGDYUg6QFVpl558q5xOTRW7eAAUM7d97O5V+o9DmDu2ABOjxGLGVztUhw==",
+  "success": true,
+  "projectFilePath": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuffMobile\\FoodStuffMobile.iOS\\FoodStuffMobile.iOS.csproj",
+  "expectedPackageFiles": [
+    "D:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "D:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
+  ],
+  "logs": []
+}
