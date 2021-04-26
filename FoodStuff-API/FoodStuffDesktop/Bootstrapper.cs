@@ -1,5 +1,7 @@
 ﻿using Caliburn.Micro;
 using FoodStuffDesktop.Helpers;
+using FoodStuffDesktop.Library.API;
+using FoodStuffDesktop.Library.Models;
 using FoodStuffDesktop.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -31,7 +33,8 @@ namespace FoodStuffDesktop
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
-                .Singleton<IAPIHelper, APIHelper>();
+                .Singleton<IAPIHelper, APIHelper>()
+                .Singleton<ILoggedInUserModel, LoggedInUserModel>();
 
             GetType().Assembly.GetTypes()
                 .Where(type => type.IsClass)

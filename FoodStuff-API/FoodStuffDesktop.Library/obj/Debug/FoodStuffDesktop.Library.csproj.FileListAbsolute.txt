@@ -1,0 +1,12 @@
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop.Library\bin\Debug\FoodStuffDesktop.Library.dll.config
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop.Library\bin\Debug\FoodStuffDesktop.Library.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop.Library\bin\Debug\FoodStuffDesktop.Library.pdb
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop.Library\bin\Debug\Newtonsoft.Json.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop.Library\bin\Debug\System.Net.Http.Formatting.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop.Library\bin\Debug\Newtonsoft.Json.xml
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop.Library\bin\Debug\System.Net.Http.Formatting.xml
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop.Library\obj\Debug\FoodStuffDesktop.Library.csprojAssemblyReference.cache
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop.Library\obj\Debug\FoodStuffDesktop.Library.csproj.CoreCompileInputs.cache
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop.Library\obj\Debug\FoodStuffDesktop.Library.csproj.CopyComplete
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop.Library\obj\Debug\FoodStuffDesktop.Library.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop.Library\obj\Debug\FoodStuffDesktop.Library.pdb

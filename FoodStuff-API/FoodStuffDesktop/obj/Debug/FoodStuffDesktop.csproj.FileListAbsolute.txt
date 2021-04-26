@@ -46,3 +46,6 @@ D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\Newtonsoft.Jso
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\System.Net.Http.Formatting.dll
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\Newtonsoft.Json.xml
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\System.Net.Http.Formatting.xml
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\FoodStuffDesktop.Library.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\FoodStuffDesktop.Library.pdb
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\FoodStuffDesktop.Library.dll.config
