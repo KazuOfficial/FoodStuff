@@ -49,3 +49,5 @@ D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\System.Net.Htt
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\FoodStuffDesktop.Library.dll
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\FoodStuffDesktop.Library.pdb
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\FoodStuffDesktop.Library.dll.config
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\obj\Debug\Views\SalesView.g.cs
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\obj\Debug\Views\SalesView.baml
