@@ -95,9 +95,6 @@ D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuff-API\obj\Debug\FoodStuff
 D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuff-API\obj\Debug\FoodStuff-API.pdb
 D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuff-API\bin\Swashbuckle.Core.dll
 D:\Programming\FoodStuff\backend\FoodStuff-API\FoodStuff-API\bin\WebActivatorEx.dll
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\FoodStuff-API.dll.config
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\FoodStuff-API.dll
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\FoodStuff-API.pdb
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\roslyn\csc.exe
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\roslyn\csc.exe.config
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\roslyn\csc.rsp
@@ -190,9 +187,12 @@ D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\System.Web.Http.Owin.xm
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\obj\Debug\FoodStuff-API.csprojAssemblyReference.cache
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\obj\Debug\FoodStuff-API.csproj.CoreCompileInputs.cache
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\obj\Debug\FoodStuff-API.csproj.CopyComplete
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\obj\Debug\FoodStuff-API.dll
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\obj\Debug\FoodStuff-API.pdb
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\FoodStuff-API.Library.dll
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\Dapper.dll
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\FoodStuff-API.Library.pdb
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\Dapper.xml
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\FoodStuff.dll.config
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\FoodStuff.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\FoodStuff.pdb
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\obj\Debug\FoodStuff.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\obj\Debug\FoodStuff.pdb
