@@ -15,10 +15,12 @@ namespace FoodStuffDesktop.ViewModels
     {
         //NotifyOfPropertyChange(() => ItemQuantity) = whenever quantity changes.
         IProductEndpoint _productEndpoint;
+        ISaleEndpoint _saleEndpoint;
         IConfigHelper _configHelper;
-        public SalesViewModel(IProductEndpoint productEndpoint, IConfigHelper configHelper)
+        public SalesViewModel(IProductEndpoint productEndpoint, IConfigHelper configHelper, ISaleEndpoint saleEndpoint)
         {
             _productEndpoint = productEndpoint;
+            _saleEndpoint = saleEndpoint;
             _configHelper = configHelper;
         }
         protected override async void OnViewLoaded(object view)
@@ -60,7 +62,11 @@ namespace FoodStuffDesktop.ViewModels
         public BindingList<CartItemModel> Cart
         {
             get { return _cart; }
-            set { _cart = value; NotifyOfPropertyChange(() => Cart); }
+            set 
+            { 
+                _cart = value; 
+                NotifyOfPropertyChange(() => Cart); 
+            }
         }
 
 
@@ -91,7 +97,7 @@ namespace FoodStuffDesktop.ViewModels
 
             foreach (var item in Cart)
             {
-                subTotal += (item.Product.RetailPrice * item.QuantityInCart);
+                subTotal += item.Product.RetailPrice * item.QuantityInCart;
             }
 
             return subTotal;
@@ -175,6 +181,7 @@ namespace FoodStuffDesktop.ViewModels
             NotifyOfPropertyChange(() => SubTotal);
             NotifyOfPropertyChange(() => Tax);
             NotifyOfPropertyChange(() => Total);
+            NotifyOfPropertyChange(() => CanCheckOut);
         }
 
         public bool CanRemoveFromCart
@@ -192,6 +199,7 @@ namespace FoodStuffDesktop.ViewModels
             NotifyOfPropertyChange(() => SubTotal);
             NotifyOfPropertyChange(() => Tax);
             NotifyOfPropertyChange(() => Total);
+            NotifyOfPropertyChange(() => CanCheckOut);
         }
 
         public bool CanCheckOut
@@ -200,13 +208,29 @@ namespace FoodStuffDesktop.ViewModels
             {
                 bool output = false;
 
+                if (Cart.Count > 0)
+                {
+                    output = true;
+                }
+
                 return output;
             }
         }
 
-        public void CheckOut()
+        public async Task CheckOut()
         {
+            SaleModel sale = new SaleModel();
 
+            foreach (var item in Cart)
+            {
+                sale.SaleDetails.Add(new SaleDetailModel
+                {
+                    ProductId = item.Product.Id,
+                    Quantity = item.QuantityInCart
+                });
+            }
+
+            await _saleEndpoint.PostSale(sale);
         }
     }
 }
