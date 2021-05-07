@@ -1,4 +1,6 @@
-﻿using FoodStuff.Models;
+﻿using FoodStuff_API.Library.DataAccess;
+using FoodStuff_API.Library.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,10 @@ namespace FoodStuff.Controllers
     {
         public void Post(SaleModel sale)
         {
-            Console.WriteLine();
+            SaleData data = new SaleData();
+            string userId = RequestContext.Principal.Identity.GetUserId();
+
+            data.SaveSale(sale, userId);
         }
     }
 }

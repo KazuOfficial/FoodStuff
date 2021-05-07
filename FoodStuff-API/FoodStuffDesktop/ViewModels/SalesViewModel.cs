@@ -83,24 +83,24 @@ namespace FoodStuffDesktop.ViewModels
             }
         }
 
-        public string SubTotal
+        private decimal CalculateSubtotal()
         {
-            get 
-            {
-                return CalculateSubTotal().ToString("C");
-            }
-        }
-
-        private decimal CalculateSubTotal()
-        {
-            decimal subTotal = 0;
+            decimal subtotal = 0;
 
             foreach (var item in Cart)
             {
-                subTotal += item.Product.RetailPrice * item.QuantityInCart;
+                subtotal += (item.Product.RetailPrice * item.QuantityInCart);
             }
 
-            return subTotal;
+            return subtotal;
+        }
+
+        public string Subtotal
+        {
+            get 
+            {
+                return CalculateSubtotal().ToString("C");
+            }
         }
 
         private decimal CalculateTax()
@@ -135,7 +135,7 @@ namespace FoodStuffDesktop.ViewModels
         {
             get
             {
-                decimal total = CalculateSubTotal() + CalculateTax();
+                decimal total = CalculateSubtotal() + CalculateTax();
                 return total.ToString("C");
             }
         }
@@ -178,7 +178,7 @@ namespace FoodStuffDesktop.ViewModels
 
             SelectedProduct.QuantityInStock -= ItemQuantity;
             ItemQuantity = 1;
-            NotifyOfPropertyChange(() => SubTotal);
+            NotifyOfPropertyChange(() => Subtotal);
             NotifyOfPropertyChange(() => Tax);
             NotifyOfPropertyChange(() => Total);
             NotifyOfPropertyChange(() => CanCheckOut);
@@ -196,7 +196,7 @@ namespace FoodStuffDesktop.ViewModels
 
         public void RemoveFromCart()
         {
-            NotifyOfPropertyChange(() => SubTotal);
+            NotifyOfPropertyChange(() => Subtotal);
             NotifyOfPropertyChange(() => Tax);
             NotifyOfPropertyChange(() => Total);
             NotifyOfPropertyChange(() => CanCheckOut);
