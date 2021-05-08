@@ -51,3 +51,5 @@ D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\FoodStuffDeskt
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\FoodStuffDesktop.Library.dll.config
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\obj\Debug\Views\SalesView.g.cs
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\obj\Debug\Views\SalesView.baml
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\AutoMapper.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\AutoMapper.xml
