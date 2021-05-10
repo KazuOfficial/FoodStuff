@@ -51,6 +51,17 @@ namespace FoodStuffDesktop.ViewModels
             }
         }
 
+        private async Task ResetSalesViewModel()
+        {
+            Cart = new BindingList<CartItemDisplayModel>();
+            await LoadProducts();
+
+            NotifyOfPropertyChange(() => Subtotal);
+            NotifyOfPropertyChange(() => Tax);
+            NotifyOfPropertyChange(() => Total);
+            NotifyOfPropertyChange(() => CanCheckOut);
+        }
+
         private ProductDisplayModel _selectedProduct;
 
         public ProductDisplayModel SelectedProduct
@@ -207,7 +218,7 @@ namespace FoodStuffDesktop.ViewModels
             {
                 bool output = false;
 
-                if (SelectedCartItem != null && SelectedCartItem?.Product.QuantityInStock > 0)
+                if (SelectedCartItem != null && SelectedCartItem?.QuantityInCart > 0)
                 {
                     output = true;
                 }
@@ -218,7 +229,6 @@ namespace FoodStuffDesktop.ViewModels
 
         public void RemoveFromCart()
         {
-
 
             SelectedCartItem.Product.QuantityInStock += 1;
 
@@ -235,6 +245,7 @@ namespace FoodStuffDesktop.ViewModels
             NotifyOfPropertyChange(() => Tax);
             NotifyOfPropertyChange(() => Total);
             NotifyOfPropertyChange(() => CanCheckOut);
+            NotifyOfPropertyChange(() => CanAddToCart);
         }
 
         public bool CanCheckOut
@@ -266,6 +277,8 @@ namespace FoodStuffDesktop.ViewModels
             }
 
             await _saleEndpoint.PostSale(sale);
+
+            await ResetSalesViewModel();
         }
     }
 }
