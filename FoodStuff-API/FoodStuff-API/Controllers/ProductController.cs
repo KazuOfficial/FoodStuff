@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace FoodStuff_API.Controllers
 {
-    //[Authorize]
+    [Authorize(Roles = "Cashier")]
     public class ProductController : ApiController
     {
         public List<ProductModel> Get()
