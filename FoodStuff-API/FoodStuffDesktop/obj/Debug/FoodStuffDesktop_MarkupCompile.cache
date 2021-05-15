@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\App.xaml
-52119161558
+61043150197
 
-20-959359712
+221553841135
 126442786306
-MainWindow.xaml;Views\LoginView.xaml;Views\SalesView.xaml;Views\ShellView.xaml;Views\StatusInfoView.xaml;
+MainWindow.xaml;Views\LoginView.xaml;Views\SalesView.xaml;Views\ShellView.xaml;Views\StatusInfoView.xaml;Views\UserDisplayView.xaml;
 
 False
 
