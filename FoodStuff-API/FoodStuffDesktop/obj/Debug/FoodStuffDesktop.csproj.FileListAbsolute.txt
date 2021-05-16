@@ -48,7 +48,6 @@ D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\Newtonsoft.Jso
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\System.Net.Http.Formatting.xml
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\FoodStuffDesktop.Library.dll
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\FoodStuffDesktop.Library.pdb
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\FoodStuffDesktop.Library.dll.config
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\obj\Debug\Views\SalesView.g.cs
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\obj\Debug\Views\SalesView.baml
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\AutoMapper.dll
@@ -57,3 +56,11 @@ D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\obj\Debug\Views\StatusIn
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\obj\Debug\Views\StatusInfoView.baml
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\obj\Debug\Views\UserDisplayView.g.cs
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\obj\Debug\Views\UserDisplayView.baml
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\System.Security.AccessControl.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\System.Security.Permissions.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\System.Security.Principal.Windows.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\System.Security.AccessControl.xml
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\System.Security.Permissions.xml
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\bin\Debug\System.Security.Principal.Windows.xml
