@@ -196,3 +196,13 @@ D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\FoodStuff.dll
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\FoodStuff.pdb
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\obj\Debug\FoodStuff.dll
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\obj\Debug\FoodStuff.pdb
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\System.Configuration.ConfigurationManager.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\System.Data.SqlClient.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\System.Security.AccessControl.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\System.Security.Permissions.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\System.Security.Principal.Windows.dll
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\System.Configuration.ConfigurationManager.xml
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\System.Data.SqlClient.xml
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\System.Security.AccessControl.xml
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\System.Security.Permissions.xml
+D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API\bin\System.Security.Principal.Windows.xml
