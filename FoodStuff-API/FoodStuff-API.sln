@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodStuff-API", "FoodStuff-
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FoodStuffDATA", "FoodStuffDATA\FoodStuffDATA.sqlproj", "{90E85F8C-C5E6-4E6E-B606-5714BED9F0F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodStuff-API.Library", "FoodStuff-API.Library\FoodStuff-API.Library.csproj", "{F3FB7D8B-F5B6-4F45-82AF-70B7322EB6B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodStuff-API.Library", "FoodStuff-API.Library\FoodStuff-API.Library.csproj", "{F3FB7D8B-F5B6-4F45-82AF-70B7322EB6B1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodStuffDesktop", "FoodStuffDesktop\FoodStuffDesktop.csproj", "{A6F68399-8A86-48C6-A68B-094E89095060}"
 EndProject
@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodStuffMobile.iOS", "Food
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodStuffMobile", "FoodStuffMobile\FoodStuffMobile\FoodStuffMobile.csproj", "{41931D2D-76CB-4221-B3B4-736D6DDAFD7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodStuffDesktop.Library", "FoodStuffDesktop.Library\FoodStuffDesktop.Library.csproj", "{C426FB75-1AB4-49A4-94E1-A5B0E9041FA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodStuffDesktop.Library", "FoodStuffDesktop.Library\FoodStuffDesktop.Library.csproj", "{C426FB75-1AB4-49A4-94E1-A5B0E9041FA5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{8A5214D5-A60A-4956-A0CB-245CB701CBA8}"
 EndProject
@@ -26,6 +26,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{36903BE1-A431-4D52-98E6-16D165DB481D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xamarin", "Xamarin", "{0726DC58-78A2-470B-B7D4-7C2CDA8242FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodStuffAPI", "FoodStuffAPI\FoodStuffAPI.csproj", "{18518B54-FE3D-4413-BF77-E10E83D47914}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -143,6 +145,18 @@ Global
 		{C426FB75-1AB4-49A4-94E1-A5B0E9041FA5}.Release|iPhone.Build.0 = Release|Any CPU
 		{C426FB75-1AB4-49A4-94E1-A5B0E9041FA5}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{C426FB75-1AB4-49A4-94E1-A5B0E9041FA5}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{18518B54-FE3D-4413-BF77-E10E83D47914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18518B54-FE3D-4413-BF77-E10E83D47914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18518B54-FE3D-4413-BF77-E10E83D47914}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{18518B54-FE3D-4413-BF77-E10E83D47914}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{18518B54-FE3D-4413-BF77-E10E83D47914}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{18518B54-FE3D-4413-BF77-E10E83D47914}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{18518B54-FE3D-4413-BF77-E10E83D47914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18518B54-FE3D-4413-BF77-E10E83D47914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18518B54-FE3D-4413-BF77-E10E83D47914}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{18518B54-FE3D-4413-BF77-E10E83D47914}.Release|iPhone.Build.0 = Release|Any CPU
+		{18518B54-FE3D-4413-BF77-E10E83D47914}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{18518B54-FE3D-4413-BF77-E10E83D47914}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -156,6 +170,7 @@ Global
 		{79C6DB88-A9E8-4A14-AC0F-BFDB596395AC} = {0726DC58-78A2-470B-B7D4-7C2CDA8242FF}
 		{41931D2D-76CB-4221-B3B4-736D6DDAFD7A} = {0726DC58-78A2-470B-B7D4-7C2CDA8242FF}
 		{C426FB75-1AB4-49A4-94E1-A5B0E9041FA5} = {8A5214D5-A60A-4956-A0CB-245CB701CBA8}
+		{18518B54-FE3D-4413-BF77-E10E83D47914} = {ED65465D-169C-4DE5-8F96-FAA7F5BF0F67}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B413FF24-10BC-4997-A03A-F7CBB483B198}
