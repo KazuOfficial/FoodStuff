@@ -1,6 +1,7 @@
 ﻿using FoodStuff_API.Library.DataAccess;
 using FoodStuff_API.Library.Models;
 using Microsoft.AspNet.Identity;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,17 @@ namespace FoodStuff.Controllers
     [Authorize]
     public class SaleController : ApiController
     {
+        private readonly IConfiguration _config;
+
+        public SaleController(IConfiguration config)
+        {
+            _config = config;
+        }
+
         [Authorize(Roles = "Cashier")]
         public void Post(SaleModel sale)
         {
-            SaleData data = new SaleData();
+            SaleData data = new SaleData(_config);
             string userId = RequestContext.Principal.Identity.GetUserId();
 
             data.SaveSale(sale, userId);
@@ -26,7 +34,7 @@ namespace FoodStuff.Controllers
         [Route("GetSalesReport")]
         public List<SaleReportModel> GetSalesReport()
         {
-            SaleData data = new SaleData();
+            SaleData data = new SaleData(_config);
 
             return data.GetSaleReport();
         }

@@ -15,6 +15,7 @@ namespace FoodStuff_API.Controllers
     [Authorize]
     public class UserController : ApiController
     {
+
         [HttpGet]
         public UserModel GetById()
         {

@@ -1,5 +1,6 @@
 ﻿using FoodStuff_API.Library.DataAccess;
 using FoodStuff_API.Library.Models;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,17 @@ namespace FoodStuff.Controllers
     [Authorize]
     public class InventoryController : ApiController
     {
+        private readonly IConfiguration _config;
+
+        public InventoryController(IConfiguration config)
+        {
+            _config = config;
+        }
+
         [Authorize(Roles = "Manager,Admin")]
         public List<InventoryModel> Get()
         {
-            InventoryData data = new InventoryData();
+            InventoryData data = new InventoryData(_config);
 
             return data.GetInventory();
         }
@@ -23,7 +31,7 @@ namespace FoodStuff.Controllers
         [Authorize(Roles = "Admin")]
         public void Post(InventoryModel item)
         {
-            InventoryData data = new InventoryData();
+            InventoryData data = new InventoryData(_config);
             data.SaveInventoryRecord(item);
         }
     }
