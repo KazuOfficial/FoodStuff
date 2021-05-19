@@ -15,6 +15,8 @@ using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using FoodStuff_API.Library.DataAccess;
+using FoodStuff_API.Library.Internal.DataAccess;
 
 namespace FoodStuffAPI
 {
@@ -39,6 +41,12 @@ namespace FoodStuffAPI
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            services.AddTransient<IInventoryData, InventoryData>();
+            services.AddTransient<IProductData, ProductData>();
+            services.AddTransient<ISaleData, SaleData>();
+            services.AddTransient<IUserData, UserData>();
+            services.AddTransient<ISqlDataAccess, SqlDataAccess>();
+
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = "JwtBearer";
@@ -49,7 +57,7 @@ namespace FoodStuffAPI
                 jwtBearerOptions.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MySecret")),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.GetValue<string>("Secrets:SecurityKey"))),
                     ValidateIssuer = false,
                     ValidateAudience = false,
                     ValidateLifetime = true,

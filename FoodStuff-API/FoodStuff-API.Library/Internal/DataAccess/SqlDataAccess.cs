@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -11,13 +12,15 @@ using System.Threading.Tasks;
 
 namespace FoodStuff_API.Library.Internal.DataAccess
 {
-    internal class SqlDataAccess : IDisposable
+    public class SqlDataAccess : IDisposable, ISqlDataAccess
     {
         private readonly IConfiguration _config;
+        private readonly ILogger<SqlDataAccess> _logger;
 
-        public SqlDataAccess(IConfiguration config)
+        public SqlDataAccess(IConfiguration config, ILogger<SqlDataAccess> logger)
         {
             _config = config;
+            _logger = logger;
         }
         public string GetConnectionString(string name)
         {
@@ -69,7 +72,7 @@ namespace FoodStuff_API.Library.Internal.DataAccess
 
         public void SaveDataInTransaction<T>(string storedProcedure, T parameters)
         {
-            _connection.Execute(storedProcedure, parameters, 
+            _connection.Execute(storedProcedure, parameters,
                 commandType: CommandType.StoredProcedure, transaction: _transaction);
         }
 
@@ -99,9 +102,9 @@ namespace FoodStuff_API.Library.Internal.DataAccess
                 {
                     CommitTransaction();
                 }
-                catch
+                catch (Exception ex)
                 {
-
+                    _logger.LogError(ex, "Commit transaction failed in the dispose method.");
                 }
             }
 
