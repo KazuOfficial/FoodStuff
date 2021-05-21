@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="PublishLocations\FoodStuffDATA.publish.xml" />
+    <None Include="FoodStuffDATA.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\User.sql" />

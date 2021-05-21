@@ -14,7 +14,3 @@ D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDATA\bin\Debug\FoodStuffDATA.pdb
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDATA\obj\Debug\FoodStuffDATA.sqlprojAssemblyReference.cache
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDATA\obj\Debug\FoodStuffDATA.dll
 D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDATA\obj\Debug\FoodStuffDATA.pdb
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDATA\obj\Debug\Model.xml
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDATA\obj\Debug\refactor.xml
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDATA\obj\Debug\postdeploy.sql
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDATA\obj\Debug\predeploy.sql

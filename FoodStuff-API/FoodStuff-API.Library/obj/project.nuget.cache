@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "nqbZJhAKM5VI7CK+mXveT3VkQEpSe1Tf6FprS8SpUA+mNU8cOZLb9WGPjgoMo4cW1DgPcGLnCW21PwAkOLBatQ==",
+  "dgSpecHash": "YJz/7NiK4nwJ2TqPHqcRr7LSSlE1Y2b+4eCr+bzr9hf7Ks4VJMD/VPs4EhgurTvEUI2iHRCOxeg0w2nxA2Rhcw==",
   "success": true,
   "projectFilePath": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuff-API.Library\\FoodStuff-API.Library.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kazu\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\Kazu\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Kazu\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
     "C:\\Users\\Kazu\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Kazu\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\Kazu\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

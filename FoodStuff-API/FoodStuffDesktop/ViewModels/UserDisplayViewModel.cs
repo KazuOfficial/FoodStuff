@@ -57,18 +57,20 @@ namespace FoodStuffDesktop.ViewModels
             { 
                 _selectedUserRole = value;
                 NotifyOfPropertyChange(() => SelectedUserRole);
+                NotifyOfPropertyChange(() => CanRemoveSelectedRole);
             }
         }
 
         private string _selectedAvailableRole;
 
-        public string SelecteAvailableRole
+        public string SelectedAvailableRole
         {
             get { return _selectedAvailableRole; }
             set 
             {
                 _selectedAvailableRole = value;
-                NotifyOfPropertyChange(() => SelecteAvailableRole);
+                NotifyOfPropertyChange(() => SelectedAvailableRole);
+                NotifyOfPropertyChange(() => CanAddSelectedRole);
             }
         }
 
@@ -154,6 +156,8 @@ namespace FoodStuffDesktop.ViewModels
         {
             var roles = await _userEndpoint.GetAllRoles();
 
+            AvailableRoles.Clear();
+
             foreach (var role in roles)
             {
                 if (UserRoles.IndexOf(role.Value) < 0)
@@ -163,12 +167,42 @@ namespace FoodStuffDesktop.ViewModels
             }
         }
 
+        public bool CanAddSelectedRole
+        {
+            get
+            {
+                if (SelectedUser is null || SelectedAvailableRole is null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+
         public async void AddSelectedRole()
         {
-            await _userEndpoint.AddUserToRole(SelectedUser.Id, SelecteAvailableRole);
+            await _userEndpoint.AddUserToRole(SelectedUser.Id, SelectedAvailableRole);
 
-            UserRoles.Add(SelecteAvailableRole);
-            AvailableRoles.Remove(SelecteAvailableRole);
+            UserRoles.Add(SelectedAvailableRole);
+            AvailableRoles.Remove(SelectedAvailableRole);
+        }
+
+        public bool CanRemoveSelectedRole
+        {
+            get
+            {
+                if (SelectedUser is null || SelectedUserRole is null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
         }
 
         public async void RemoveSelectedRole()

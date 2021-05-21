@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wUX11EMA9dHufOKUI3EzxaBoPwnb5A0HYOmnC1rheUhhO2ZEImaj8DKQ2tI9ZnxHrBtLDFYzyZVMEcm22JY3jg==",
+  "dgSpecHash": "UqmZNkipy4F8pz3V8suQH+NVTxYCASIINl7BEOjrchQ/YvZMLmvyOZsi9NQg4/KXK9Wnf7TcRvMT7FpNj5iA/Q==",
   "success": true,
   "projectFilePath": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuffAPI\\FoodStuffAPI.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "C:\\Users\\Kazu\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Kazu\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\Kazu\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Kazu\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
     "C:\\Users\\Kazu\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
     "C:\\Users\\Kazu\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Kazu\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\5.0.0\\microsoft.extensions.fileproviders.abstractions.5.0.0.nupkg.sha512",
