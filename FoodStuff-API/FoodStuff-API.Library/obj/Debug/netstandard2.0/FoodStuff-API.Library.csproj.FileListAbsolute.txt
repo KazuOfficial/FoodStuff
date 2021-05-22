@@ -1,7 +1,0 @@
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\bin\Debug\netstandard2.0\FoodStuff-API.Library.deps.json
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\bin\Debug\netstandard2.0\FoodStuff-API.Library.dll
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\bin\Debug\netstandard2.0\FoodStuff-API.Library.pdb
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\obj\Debug\netstandard2.0\FoodStuff-API.Library.csprojAssemblyReference.cache
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\obj\Debug\netstandard2.0\FoodStuff-API.Library.csproj.CoreCompileInputs.cache
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\obj\Debug\netstandard2.0\FoodStuff-API.Library.dll
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\obj\Debug\netstandard2.0\FoodStuff-API.Library.pdb

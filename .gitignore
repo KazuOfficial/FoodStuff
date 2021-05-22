@@ -41,10 +41,12 @@ build/Release
 node_modules/
 frontend/node_modules/
 jspm_packages/
-FoodStuff-API/packages/
-FoodStuff-API/FoodStuff-API/bin/
-FoodStuff-API/FoodStuffAPI/bin/
-FoodStuff-API/.vs/
+backend/packages/
+backend/FoodStuff-API/bin/
+backend/FoodStuffAPI/bin/
+backend/FoodStuffDesktop/bin/
+backend/FoodStuffMobile/FoodStuffMobile.Android/obj
+backend/.vs/
 .vs/
 packages/
 bin/
