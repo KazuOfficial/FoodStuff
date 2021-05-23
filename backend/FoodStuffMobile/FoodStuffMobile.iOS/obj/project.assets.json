@@ -987,11 +987,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuffMobile\\FoodStuffMobile.iOS\\FoodStuffMobile.iOS.csproj",
+      "projectUniqueName": "D:\\Programming\\FoodStuff\\backend\\FoodStuffMobile\\FoodStuffMobile.iOS\\FoodStuffMobile.iOS.csproj",
       "projectName": "FoodStuffMobile.iOS",
-      "projectPath": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuffMobile\\FoodStuffMobile.iOS\\FoodStuffMobile.iOS.csproj",
+      "projectPath": "D:\\Programming\\FoodStuff\\backend\\FoodStuffMobile\\FoodStuffMobile.iOS\\FoodStuffMobile.iOS.csproj",
       "packagesPath": "C:\\Users\\Kazu\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuffMobile\\FoodStuffMobile.iOS\\obj\\",
+      "outputPath": "D:\\Programming\\FoodStuff\\backend\\FoodStuffMobile\\FoodStuffMobile.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1012,8 +1012,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuffMobile\\FoodStuffMobile\\FoodStuffMobile.csproj": {
-              "projectPath": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuffMobile\\FoodStuffMobile\\FoodStuffMobile.csproj"
+            "D:\\Programming\\FoodStuff\\backend\\FoodStuffMobile\\FoodStuffMobile\\FoodStuffMobile.csproj": {
+              "projectPath": "D:\\Programming\\FoodStuff\\backend\\FoodStuffMobile\\FoodStuffMobile\\FoodStuffMobile.csproj"
             }
           }
         }

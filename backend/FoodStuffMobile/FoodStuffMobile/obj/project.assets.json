@@ -637,11 +637,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuffMobile\\FoodStuffMobile\\FoodStuffMobile.csproj",
+      "projectUniqueName": "D:\\Programming\\FoodStuff\\backend\\FoodStuffMobile\\FoodStuffMobile\\FoodStuffMobile.csproj",
       "projectName": "FoodStuffMobile",
-      "projectPath": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuffMobile\\FoodStuffMobile\\FoodStuffMobile.csproj",
+      "projectPath": "D:\\Programming\\FoodStuff\\backend\\FoodStuffMobile\\FoodStuffMobile\\FoodStuffMobile.csproj",
       "packagesPath": "C:\\Users\\Kazu\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuffMobile\\FoodStuffMobile\\obj\\",
+      "outputPath": "D:\\Programming\\FoodStuff\\backend\\FoodStuffMobile\\FoodStuffMobile\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

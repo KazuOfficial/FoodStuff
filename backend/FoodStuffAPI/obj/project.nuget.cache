@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UqmZNkipy4F8pz3V8suQH+NVTxYCASIINl7BEOjrchQ/YvZMLmvyOZsi9NQg4/KXK9Wnf7TcRvMT7FpNj5iA/Q==",
+  "dgSpecHash": "hTwjNia9Oguts2M+Kxr2YfbVOdkK7e1lkkpenvZ2DJDtzNElAQ0pZwbVF2G7ACNL7S3s+dd56mpZx9R0jR/LiQ==",
   "success": true,
-  "projectFilePath": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuffAPI\\FoodStuffAPI.csproj",
+  "projectFilePath": "D:\\Programming\\FoodStuff\\backend\\FoodStuffAPI\\FoodStuffAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kazu\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\Kazu\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

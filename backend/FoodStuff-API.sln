@@ -27,6 +27,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xamarin", "Xamarin", "{0726
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodStuffAPI", "FoodStuffAPI\FoodStuffAPI.csproj", "{18518B54-FE3D-4413-BF77-E10E83D47914}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{F1B0D683-0DEC-4F0D-84E0-A1F1B5E8B2E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal", "Portal\Portal.csproj", "{DFAB1729-640C-4B2C-B657-DD7824E7D3EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -143,6 +147,18 @@ Global
 		{18518B54-FE3D-4413-BF77-E10E83D47914}.Release|iPhone.Build.0 = Release|Any CPU
 		{18518B54-FE3D-4413-BF77-E10E83D47914}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{18518B54-FE3D-4413-BF77-E10E83D47914}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{DFAB1729-640C-4B2C-B657-DD7824E7D3EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFAB1729-640C-4B2C-B657-DD7824E7D3EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFAB1729-640C-4B2C-B657-DD7824E7D3EF}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{DFAB1729-640C-4B2C-B657-DD7824E7D3EF}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{DFAB1729-640C-4B2C-B657-DD7824E7D3EF}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{DFAB1729-640C-4B2C-B657-DD7824E7D3EF}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{DFAB1729-640C-4B2C-B657-DD7824E7D3EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFAB1729-640C-4B2C-B657-DD7824E7D3EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFAB1729-640C-4B2C-B657-DD7824E7D3EF}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{DFAB1729-640C-4B2C-B657-DD7824E7D3EF}.Release|iPhone.Build.0 = Release|Any CPU
+		{DFAB1729-640C-4B2C-B657-DD7824E7D3EF}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{DFAB1729-640C-4B2C-B657-DD7824E7D3EF}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -156,6 +172,7 @@ Global
 		{41931D2D-76CB-4221-B3B4-736D6DDAFD7A} = {0726DC58-78A2-470B-B7D4-7C2CDA8242FF}
 		{C426FB75-1AB4-49A4-94E1-A5B0E9041FA5} = {8A5214D5-A60A-4956-A0CB-245CB701CBA8}
 		{18518B54-FE3D-4413-BF77-E10E83D47914} = {ED65465D-169C-4DE5-8F96-FAA7F5BF0F67}
+		{DFAB1729-640C-4B2C-B657-DD7824E7D3EF} = {F1B0D683-0DEC-4F0D-84E0-A1F1B5E8B2E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B413FF24-10BC-4997-A03A-F7CBB483B198}

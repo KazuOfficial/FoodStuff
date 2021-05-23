@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\obj\Debug\net5.0-windows\
+D:\Programming\FoodStuff\backend\FoodStuffDesktop\obj\Debug\net5.0-windows\
 FoodStuffDesktop
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuffDesktop\App.xaml
+D:\Programming\FoodStuff\backend\FoodStuffDesktop\App.xaml
 6-1594491399
 
 21-568906989
-231-77380783
+2311493968550
 MainWindow.xaml;Views\LoginView.xaml;Views\SalesView.xaml;Views\ShellView.xaml;Views\StatusInfoView.xaml;Views\UserDisplayView.xaml;
 
 False

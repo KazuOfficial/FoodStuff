@@ -6394,11 +6394,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuffAPI\\FoodStuffAPI.csproj",
+      "projectUniqueName": "D:\\Programming\\FoodStuff\\backend\\FoodStuffAPI\\FoodStuffAPI.csproj",
       "projectName": "FoodStuffAPI",
-      "projectPath": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuffAPI\\FoodStuffAPI.csproj",
+      "projectPath": "D:\\Programming\\FoodStuff\\backend\\FoodStuffAPI\\FoodStuffAPI.csproj",
       "packagesPath": "C:\\Users\\Kazu\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuffAPI\\obj\\",
+      "outputPath": "D:\\Programming\\FoodStuff\\backend\\FoodStuffAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -6419,8 +6419,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuff-API.Library\\FoodStuff-API.Library.csproj": {
-              "projectPath": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuff-API.Library\\FoodStuff-API.Library.csproj"
+            "D:\\Programming\\FoodStuff\\backend\\FoodStuff-API.Library\\FoodStuff-API.Library.csproj": {
+              "projectPath": "D:\\Programming\\FoodStuff\\backend\\FoodStuff-API.Library\\FoodStuff-API.Library.csproj"
             }
           }
         }

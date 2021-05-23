@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3AmLZUhqotFAeQ6wjk6QVEKCF3BfJWMdEnQmyb/vzdbD4cs8dTfmu3Y1O1HhBam7UG1LeYXNy5s6uovVeUCCaA==",
+  "dgSpecHash": "Q12X++gaZzG/qXo5a7UHzhHUT6G1FLNCHIq/F2sF8DYdInNZiHct7ZjG4OokcvSPtLMLQJmH0h5ilVYfMNkI6w==",
   "success": true,
-  "projectFilePath": "D:\\Programming\\FoodStuff\\FoodStuff-API\\FoodStuffMobile\\FoodStuffMobile\\FoodStuffMobile.csproj",
+  "projectFilePath": "D:\\Programming\\FoodStuff\\backend\\FoodStuffMobile\\FoodStuffMobile\\FoodStuffMobile.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kazu\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Kazu\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
