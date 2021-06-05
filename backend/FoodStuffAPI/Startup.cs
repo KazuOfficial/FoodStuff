@@ -31,13 +31,6 @@ namespace FoodStuffAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(policy => {
-                policy.AddPolicy("OpenCorsPolicy", opt =>
-                    opt.AllowAnyOrigin()
-                    .AllowAnyHeader()
-                    .AllowAnyMethod()
-                );
-            });
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -52,24 +45,6 @@ namespace FoodStuffAPI
             services.AddTransient<ISaleData, SaleData>();
             services.AddTransient<IUserData, UserData>();
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
-
-            services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = "JwtBearer";
-                options.DefaultChallengeScheme = "JwtBearer";
-            })
-            .AddJwtBearer("JwtBearer", jwtBearerOptions =>
-            {
-                jwtBearerOptions.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.GetValue<string>("Secrets:SecurityKey"))),
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    ValidateLifetime = true,
-                    ClockSkew = TimeSpan.FromMinutes(5),
-                };
-            });
 
             services.AddSwaggerGen(setup =>
             {
@@ -97,7 +72,6 @@ namespace FoodStuffAPI
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-            app.UseCors("OpenCorsPolicy");
             app.UseStaticFiles();
 
             app.UseRouting();
