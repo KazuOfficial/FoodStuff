@@ -64,5 +64,10 @@
     <Build Include="dbo\Tables\Product.sql" />
     <Build Include="dbo\Tables\Sale.sql" />
     <Build Include="dbo\Tables\SaleDetail.sql" />
+    <Build Include="dbo\Stored Procedures\spProduct_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\spProduct_GetById.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FoodStuffDATA.publish.xml" />
   </ItemGroup>
 </Project>

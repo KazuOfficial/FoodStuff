@@ -6,7 +6,7 @@ export default class WelcomeImage extends Component {
       <div>
         <img
           src="https://i.imgur.com/Cy6U2Zv.png"
-          class="img-fluid w-100"
+          className="img-fluid w-100"
           style={{ height: 180 }}
           alt="..."
         ></img>

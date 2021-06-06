@@ -1,13 +1,14 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Header extends Component {
   render() {
     return (
       <nav className="navbar navbar-dark bg-dark">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             FoodStuff
-          </a>
+          </Link>
         </div>
       </nav>
     );
