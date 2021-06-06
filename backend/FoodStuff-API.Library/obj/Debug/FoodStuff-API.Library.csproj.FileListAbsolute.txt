@@ -1,9 +1,0 @@
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\bin\Debug\FoodStuff-API.Library.dll
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\bin\Debug\FoodStuff-API.Library.pdb
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\bin\Debug\Dapper.dll
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\bin\Debug\Dapper.xml
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\obj\Debug\FoodStuff-API.Library.csprojAssemblyReference.cache
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\obj\Debug\FoodStuff-API.Library.csproj.CoreCompileInputs.cache
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\obj\Debug\FoodStuff-API.Library.csproj.CopyComplete
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\obj\Debug\FoodStuff-API.Library.dll
-D:\Programming\FoodStuff\FoodStuff-API\FoodStuff-API.Library\obj\Debug\FoodStuff-API.Library.pdb

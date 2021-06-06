@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Sale]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [SaleDate] DATETIME2 NOT NULL, 
+    [SubTotal] MONEY NOT NULL, 
+    [Total] MONEY NOT NULL, 
+)
