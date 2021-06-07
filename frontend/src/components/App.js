@@ -6,11 +6,12 @@ import { Provider } from "react-redux";
 import store from "../store";
 import { loadProducts } from "../actions/product";
 
-import ManagerPanel from "./manager/ManagerPanel";
+import ProductPanel from "./manager/products/ProductPanel";
 
-import Header from "./layout/Header";
 import Dashboard from "./main/Dashboard";
-import Footer from "./layout/Footer";
+import SellsPanel from "./manager/sells/SellsPanel";
+import UserPanel from "./manager/users/UserPanel";
+import Login from "./account/Login";
 
 class App extends Component {
   componentDidMount() {
@@ -22,12 +23,13 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <Fragment>
-            <Header />
             <Switch>
               <Route exact path="/" component={Dashboard} />
-              <Route exact path="/manager" component={ManagerPanel} />
+              <Route exact path="/manager" component={ProductPanel} />
+              <Route exact path="/manager/sells" component={SellsPanel} />
+              <Route exact path="/manager/users" component={UserPanel} />
+              <Route exact path="/manager/login" component={Login} />
             </Switch>
-            <Footer />
           </Fragment>
         </Router>
       </Provider>
