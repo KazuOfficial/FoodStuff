@@ -66,6 +66,8 @@
     <Build Include="dbo\Tables\SaleDetail.sql" />
     <Build Include="dbo\Stored Procedures\spProduct_GetAll.sql" />
     <Build Include="dbo\Stored Procedures\spProduct_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\spProduct_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spProduct_Delete.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FoodStuffDATA.publish.xml" />

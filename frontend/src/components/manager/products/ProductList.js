@@ -10,8 +10,8 @@ class ProductList extends Component {
   render() {
     const { productList } = this.props.product;
     return (
-      <div class="table-responsive">
-        <table class="table table-striped mt-5">
+      <div className="table-responsive">
+        <table className="table table-striped mt-5">
           <thead>
             <tr>
               <th scope="col">#</th>

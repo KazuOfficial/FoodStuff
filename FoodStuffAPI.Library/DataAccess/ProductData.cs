@@ -29,5 +29,15 @@ namespace FoodStuffAPI.Library.DataAccess
 
             return output;
         }
+
+        public void SaveProduct(ProductModel item)
+        {
+            _sql.SaveData("dbo.spProduct_Insert", item, "FoodStuffDATA");
+        }
+
+        public void DeleteProduct(string item)
+        {
+            _sql.SaveData("dbo.spProduct_Delete", new { ProductName = item }, "FoodStuffDATA");
+        }
     }
 }

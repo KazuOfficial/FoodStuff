@@ -1,27 +1,51 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+import PropTypes, { element } from "prop-types";
 import { connect } from "react-redux";
+import { deleteProduct } from "../../../actions/product";
 
 class RemoveProduct extends Component {
+  state = {
+    productName: "",
+  };
+
   static propTypes = {
+    deleteProduct: PropTypes.func.isRequired,
     product: PropTypes.object.isRequired,
   };
 
+  onSubmit = (e) => {
+    e.preventDefault();
+    const { productName } = this.state;
+    if (productName != "") {
+      this.props.deleteProduct(productName);
+    }
+  };
+
+  onChange = (e) => this.setState({ [e.target.name]: e.target.value });
+
   render() {
+    const { productName } = this.state;
     const { productList } = this.props.product;
+    //productList &&
+    //this.setState({ productName: "xd" }); //(productList[0].productName);
     return (
-      <form className="mt-5">
+      <form onSubmit={this.onSubmit} className="mt-5">
         <h5>Remove a product</h5>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Choose a product</label>
-          <select class="form-control" id="exampleFormControlSelect1">
+        <div className="form-group">
+          <select
+            className="form-control"
+            name="productName"
+            value={productName}
+            onChange={this.onChange}
+          >
+            <option hidden>--- choose a product ---</option>
             {productList &&
               productList.map(function (element) {
                 return <option>{element.productName}</option>;
               })}
           </select>
         </div>
-        <button type="submit" class="btn btn-danger mt-2">
+        <button type="submit" className="btn btn-danger mt-2">
           Remove
         </button>
       </form>
@@ -33,4 +57,4 @@ const mapStateToProps = (state) => ({
   product: state.product,
 });
 
-export default connect(mapStateToProps)(RemoveProduct);
+export default connect(mapStateToProps, { deleteProduct })(RemoveProduct);

@@ -26,5 +26,21 @@ namespace FoodStuffAPI.Controllers
         {
             return _productData.GetProducts();
         }
+
+        //[Authorize(Roles = "Admin")]
+        [HttpPost]
+        [Route("AddProduct")]
+        public void AddProduct(ProductModel item)
+        {
+            _productData.SaveProduct(item);
+        }
+
+        //[Authorize(Roles = "Admin")]
+        [HttpPost]
+        [Route("DeleteProduct")]
+        public void DeleteProduct(string productName)
+        {
+            _productData.DeleteProduct(productName);
+        }
     }
 }
