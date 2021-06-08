@@ -28,7 +28,7 @@ namespace FoodStuffAPI.Controllers
             _saleData.SaveSale(sale);
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [Route("GetSalesReport")]
         [HttpGet]
         public List<SaleReportModel> GetSalesReport()

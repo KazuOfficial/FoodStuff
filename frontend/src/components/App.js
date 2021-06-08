@@ -25,9 +25,13 @@ class App extends Component {
           <Fragment>
             <Switch>
               <Route exact path="/" component={Dashboard} />
-              <Route exact path="/manager" component={ProductPanel} />
-              <Route exact path="/manager/sells" component={SellsPanel} />
-              <Route exact path="/manager/users" component={UserPanel} />
+              <PrivateRoute exact path="/manager" component={ProductPanel} />
+              <PrivateRoute
+                exact
+                path="/manager/sells"
+                component={SellsPanel}
+              />
+              <PrivateRoute exact path="/manager/users" component={UserPanel} />
               <Route exact path="/manager/login" component={Login} />
             </Switch>
           </Fragment>
