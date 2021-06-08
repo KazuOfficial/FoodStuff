@@ -12,6 +12,7 @@ import Dashboard from "./main/Dashboard";
 import SellsPanel from "./manager/sells/SellsPanel";
 import UserPanel from "./manager/users/UserPanel";
 import Login from "./account/Login";
+import Wrapper from "./shoppingCart/Wrapper";
 
 class App extends Component {
   componentDidMount() {
@@ -25,14 +26,11 @@ class App extends Component {
           <Fragment>
             <Switch>
               <Route exact path="/" component={Dashboard} />
-              <PrivateRoute exact path="/manager" component={ProductPanel} />
-              <PrivateRoute
-                exact
-                path="/manager/sells"
-                component={SellsPanel}
-              />
-              <PrivateRoute exact path="/manager/users" component={UserPanel} />
+              <Route exact path="/manager" component={ProductPanel} />
+              <Route exact path="/manager/sells" component={SellsPanel} />
+              <Route exact path="/manager/users" component={UserPanel} />
               <Route exact path="/manager/login" component={Login} />
+              <Route exact path="/cart" component={Wrapper} />
             </Switch>
           </Fragment>
         </Router>

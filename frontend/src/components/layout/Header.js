@@ -9,6 +9,9 @@ export default class Header extends Component {
           <Link className="navbar-brand" to="/">
             FoodStuff
           </Link>
+          <Link className="navbar-brand justify-content-end" to="/cart">
+            🛒
+          </Link>
         </div>
       </nav>
     );
