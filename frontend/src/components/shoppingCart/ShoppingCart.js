@@ -3,12 +3,19 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { removeFromCart } from "../../actions/cart";
 import { bindActionCreators } from "redux";
+import "../payment/StripeContainer";
 
 import "./ShoppingCart.css";
+import StripeContainer from "../payment/StripeContainer";
 
 class ShoppingCart extends Component {
   handleClick = (e) => {
     this.props.removeFromCart(e.target.value);
+  };
+
+  onClick = (e) => {
+    e.target.classList.add("collapse");
+    document.getElementById("stripeContainer").classList.remove("collapse");
   };
 
   render() {
@@ -73,65 +80,66 @@ class ShoppingCart extends Component {
                   );
                 })}
               {cart.length < 1 ? (
-                <h4 className="text-center fw-bold">CART IS EMPTY</h4>
+                <h4 className="ms-3 fw-bold">CART IS EMPTY</h4>
               ) : null}
               <div className="back-to-shop">
                 <Link to="/">&larr;</Link>
                 <span className="text-muted">Back to shop</span>
               </div>
             </div>
-            <div className="col-md-4 summary">
-              <div>
-                <h5 id="h5">
-                  <b>Summary</b>
-                </h5>
-              </div>
-              <hr />
-              <div className="row">
-                <div id="col" className="col" style={{ paddingLeft: 0 }}>
-                  {cart.length != 0 ? <span>ITEMS {cart.length}</span> : null}
+            {cart.length != 0 ? (
+              <div className="col-md-4 summary">
+                <div>
+                  <h5 id="h5">
+                    <b>Summary</b>
+                  </h5>
                 </div>
-                <div id="col" className="col text-right">
-                  {cart.length != 0 ? (
+                <hr />
+                <div className="row">
+                  <div id="col" className="col" style={{ paddingLeft: 0 }}>
+                    {cart.length != 0 ? <span>ITEMS {cart.length}</span> : null}
+                  </div>
+                  <div id="col" className="col text-right">
                     <span>&pound; {subTotal.toFixed(2)}</span>
-                  ) : null}
+                  </div>
                 </div>
-              </div>
-              <form>
-                <p>SHIPPING</p>
-                <select id="select">
-                  <option className="text-muted">
-                    Standard Delivery: &pound;5.00
-                  </option>
-                </select>
-                {/* <p>GIVE CODE</p>
-                <input
-                  id="code"
-                  className="inputClass"
-                  placeholder="Enter your code"
-                ></input> */}
-              </form>
-              <div
-                id="row"
-                className="row"
-                style={{
-                  borderTop: "px solid rgba(0,0,0,.1)",
-                  padding: "2vh 0",
-                }}
-              >
-                <div id="col" className="col">
-                  TOTAL PRICE
-                </div>
-                <div id="col" className="col text-right">
-                  {cart.length != 0 ? (
+                <form>
+                  <p>SHIPPING</p>
+                  <select id="select">
+                    <option className="text-muted">
+                      Standard Delivery: &pound;5.00
+                    </option>
+                  </select>
+                  {/* <p>GIVE CODE</p>
+                                  <input
+                                    id="code"
+                                    className="inputClass"
+                                    placeholder="Enter your code"
+                                  ></input> */}
+                </form>
+                <div
+                  id="row"
+                  className="row"
+                  style={{
+                    borderTop: "px solid rgba(0,0,0,.1)",
+                    padding: "2vh 0",
+                  }}
+                >
+                  <div id="col" className="col">
+                    TOTAL PRICE
+                  </div>
+                  <div id="col" className="col text-right">
                     <span>&pound; {(subTotal + 5).toFixed(2)}</span>
-                  ) : null}
+                  </div>
                 </div>
+                <div id="stripeContainer" className="collapse">
+                  <StripeContainer />
+                </div>
+                <button onClick={this.onClick} id="btn" className="btn">
+                  CHECKOUT
+                </button>
               </div>
-              <button id="btn" className="btn">
-                CHECKOUT
-              </button>
-            </div>
+            ) : null}
           </div>
         </div>
       </div>
