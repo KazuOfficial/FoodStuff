@@ -1,148 +1,134 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { removeFromCart } from "../../actions/cart";
+import { bindActionCreators } from "redux";
 
 import "./ShoppingCart.css";
 
-export default class ShoppingCart extends Component {
+class ShoppingCart extends Component {
+  handleClick = (e) => {
+    this.props.removeFromCart(e.target.value);
+  };
+
   render() {
+    const { cart, subTotal } = this.props.cart;
     return (
       <div className="body mt-5">
-        <div id="card" class="card">
-          <div id="row" class="row">
-            <div class="col-md-8 cart">
-              <div class="title">
-                <div id="row" class="row">
-                  <div class="col">
+        <div id="card" className="card">
+          <div id="row" className="row">
+            <div className="col-md-8 cart">
+              <div className="title">
+                <div id="row" className="row">
+                  <div className="col">
                     <h4>
                       <b>Shopping Cart</b>
                     </h4>
                   </div>
                   <div
                     id="col"
-                    class="col align-self-center text-right text-muted"
+                    className="col align-self-center text-right text-muted"
                   >
-                    3 items
+                    {cart.length != 0 ? <span>{cart.length} items</span> : null}
                   </div>
                 </div>
               </div>
-              <div id="col row" class="row border-top border-bottom">
-                <div id="row" class="row main align-items-center">
-                  <div id="col" class="col-2"></div>
-                  <div id="col" class="col">
-                    <div id="row" class="row text-muted">
-                      Shirt
+              {cart != 0 &&
+                cart.map((element, index) => {
+                  return (
+                    <div
+                      key={index}
+                      id="row"
+                      className="row border-top border-bottom"
+                    >
+                      <div id="row" className="row main align-items-center">
+                        <div id="col" className="col-2"></div>
+                        <div id="col" className="col">
+                          <div id="row" className="row text-muted">
+                            Pizza
+                          </div>
+                          <div id="row" className="row">
+                            {element.productName}
+                          </div>
+                        </div>
+                        <div id="col" className="col">
+                          <a href="#">-</a>
+                          <a href="#" className="border">
+                            1
+                          </a>
+                          <a href="#">+</a>
+                        </div>
+                        <div id="col" className="col">
+                          &pound; {element.price}
+                          <button
+                            value={element.productName}
+                            onClick={this.handleClick}
+                            className="close btn"
+                          >
+                            &#10005;
+                          </button>
+                        </div>
+                      </div>
                     </div>
-                    <div id="row" class="row">
-                      Cotton T-shirt
-                    </div>
-                  </div>
-                  <div id="col" class="col">
-                    <a href="#">-</a>
-                    <a href="#" class="border">
-                      1
-                    </a>
-                    <a href="#">+</a>
-                  </div>
-                  <div id="col" class="col">
-                    &euro; 44.00 <span class="close">&#10005;</span>
-                  </div>
-                </div>
-              </div>
-              <div id="row" class="row">
-                <div id="row" class="row main align-items-center">
-                  <div id="col" class="col-2"></div>
-                  <div id="col" class="col">
-                    <div id="row" class="row text-muted">
-                      Shirt
-                    </div>
-                    <div id="row" class="row">
-                      Cotton T-shirt
-                    </div>
-                  </div>
-                  <div id="col" class="col">
-                    <a href="#">-</a>
-                    <a href="#" class="border">
-                      1
-                    </a>
-                    <a href="#">+</a>
-                  </div>
-                  <div id="col" class="col">
-                    &euro; 44.00 <span class="close">&#10005;</span>
-                  </div>
-                </div>
-              </div>
-              <div id="row" class="row border-top border-bottom">
-                <div id="row" class="row main align-items-center">
-                  <div id="col" class="col-2"></div>
-                  <div id="col" class="col">
-                    <div id="row" class="row text-muted">
-                      Shirt
-                    </div>
-                    <div id="row" class="row">
-                      Cotton T-shirt
-                    </div>
-                  </div>
-                  <div id="col" class="col">
-                    <a href="#">-</a>
-                    <a href="#" class="border">
-                      1
-                    </a>
-                    <a href="#">+</a>
-                  </div>
-                  <div id="col" class="col">
-                    &euro; 44.00 <span class="close">&#10005;</span>
-                  </div>
-                </div>
-              </div>
-              <div class="back-to-shop">
-                <a href="#">&larr;</a>
-                <span class="text-muted">Back to shop</span>
+                  );
+                })}
+              {cart.length < 1 ? (
+                <h4 className="text-center fw-bold">CART IS EMPTY</h4>
+              ) : null}
+              <div className="back-to-shop">
+                <Link to="/">&larr;</Link>
+                <span className="text-muted">Back to shop</span>
               </div>
             </div>
-            <div class="col-md-4 summary">
+            <div className="col-md-4 summary">
               <div>
                 <h5 id="h5">
                   <b>Summary</b>
                 </h5>
               </div>
               <hr />
-              <div class="row">
-                <div id="col" class="col" style={{ paddingLeft: 0 }}>
-                  ITEMS 3
+              <div className="row">
+                <div id="col" className="col" style={{ paddingLeft: 0 }}>
+                  {cart.length != 0 ? <span>ITEMS {cart.length}</span> : null}
                 </div>
-                <div id="col" class="col text-right">
-                  &euro; 132.00
+                <div id="col" className="col text-right">
+                  {cart.length != 0 ? (
+                    <span>&pound; {subTotal.toFixed(2)}</span>
+                  ) : null}
                 </div>
               </div>
               <form>
                 <p>SHIPPING</p>
                 <select id="select">
-                  <option class="text-muted">
-                    Standard-Delivery- &euro;5.00
+                  <option className="text-muted">
+                    Standard Delivery: &pound;5.00
                   </option>
                 </select>
-                <p>GIVE CODE</p>
+                {/* <p>GIVE CODE</p>
                 <input
                   id="code"
                   className="inputClass"
                   placeholder="Enter your code"
-                ></input>
+                ></input> */}
               </form>
               <div
                 id="row"
-                class="row"
+                className="row"
                 style={{
                   borderTop: "px solid rgba(0,0,0,.1)",
                   padding: "2vh 0",
                 }}
               >
-                <div id="col" class="col">
+                <div id="col" className="col">
                   TOTAL PRICE
                 </div>
-                <div id="col" class="col text-right">
-                  &euro; 137.00
+                <div id="col" className="col text-right">
+                  {cart.length != 0 ? (
+                    <span>&pound; {(subTotal + 5).toFixed(2)}</span>
+                  ) : null}
                 </div>
               </div>
-              <button id="btn" class="btn">
+              <button id="btn" className="btn">
                 CHECKOUT
               </button>
             </div>
@@ -152,3 +138,14 @@ export default class ShoppingCart extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  cart: state.cart,
+  subTotal: state.subTotal,
+});
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ removeFromCart }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCart);

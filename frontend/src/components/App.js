@@ -15,10 +15,6 @@ import Login from "./account/Login";
 import Wrapper from "./shoppingCart/Wrapper";
 
 class App extends Component {
-  componentDidMount() {
-    store.dispatch(loadProducts());
-  }
-
   render() {
     return (
       <Provider store={store}>
