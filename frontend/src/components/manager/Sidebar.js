@@ -24,9 +24,9 @@ export default class Sidebar extends Component {
             </Link>
           </li>
           <li>
-            <Link to="/manager/sells" className="nav-link text-white">
+            <Link to="/manager/sales" className="nav-link text-white">
               <svg className="bi me-2" width="16" height="16"></svg>
-              Sells
+              Sales
             </Link>
           </li>
           <li>

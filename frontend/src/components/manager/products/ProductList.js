@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { loadProducts } from "../../../actions/product";
+import { bindActionCreators } from "redux";
 
 class ProductList extends Component {
   static propTypes = {
     product: PropTypes.object.isRequired,
+    loadProducts: PropTypes.func.isRequired,
   };
+
+  componentDidMount() {
+    this.props.loadProducts();
+  }
 
   render() {
     const { productList } = this.props.product;
@@ -18,7 +25,6 @@ class ProductList extends Component {
               <th scope="col">Name</th>
               <th scope="col">Description</th>
               <th scope="col">Cost</th>
-              <th scope="col">Id</th>
             </tr>
           </thead>
           <tbody>
@@ -31,7 +37,6 @@ class ProductList extends Component {
                     <td>{element.productName}</td>
                     <td>{element.description}</td>
                     <td>£{element.retailPrice.toFixed(2)}</td>
-                    <td>{element.id}</td>
                   </tr>
                 );
               })}
@@ -46,4 +51,8 @@ const mapStateToProps = (state) => ({
   product: state.product,
 });
 
-export default connect(mapStateToProps)(ProductList);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ loadProducts }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
