@@ -23,13 +23,6 @@ namespace FoodStuffAPI.Library.DataAccess
             return output;
         }
 
-        public ProductModel GetProductById(int productId)
-        {
-            var output = _sql.LoadData<ProductModel, dynamic>("dbo.spProduct_GetById", new { Id = productId }, "FoodStuffDATA").FirstOrDefault();
-
-            return output;
-        }
-
         public void SaveProduct(ProductModel item)
         {
             _sql.SaveData("dbo.spProduct_Insert", item, "FoodStuffDATA");

@@ -29,11 +29,11 @@ namespace FoodStuffAPI.Controllers
         }
 
         //[Authorize(Roles = "Admin")]
-        [Route("GetSalesReport")]
+        [Route("GetSales")]
         [HttpGet]
-        public List<SaleReportModel> GetSalesReport()
+        public List<SaleModel> GetSales()
         {
-            return _saleData.GetSaleReport();
+            return _saleData.GetSales();
         }
     }
 }

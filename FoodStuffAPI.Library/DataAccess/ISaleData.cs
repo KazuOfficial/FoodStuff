@@ -5,7 +5,7 @@ namespace FoodStuffAPI.Library.DataAccess
 {
     public interface ISaleData
     {
-        List<SaleReportModel> GetSaleReport();
-        void SaveSale(SaleModel saleInfo);
+        List<SaleModel> GetSales();
+        void SaveSale(SaleModel sale);
     }
 }

@@ -65,7 +65,7 @@ namespace FoodStuffAPI
                     {
                         ValidateIssuerSigningKey = true,
                         //IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.GetValue<string>("Secrets:SecurityKey"))),
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("XDDDD"))    ,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("XDDDD")),
                         ValidateIssuer = false,
                         ValidateAudience = false,
                         ValidateLifetime = true,
