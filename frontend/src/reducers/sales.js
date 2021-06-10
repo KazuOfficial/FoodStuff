@@ -17,7 +17,7 @@ export default function (state = initialState, action) {
         saleList: action.payload,
       };
     case SALE_POST_SUCCESS:
-      window.location.href = "/";
+      window.location.href = "/purchasesuccessful";
       return {
         ...state,
       };

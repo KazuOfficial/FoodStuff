@@ -18,19 +18,32 @@ export default class Sidebar extends Component {
         <hr />
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-            <Link to="/manager" className="nav-link active" aria-current="page">
+            <Link
+              id="sideProducts"
+              to="/manager"
+              className="nav-link text-white"
+              aria-current="page"
+            >
               <svg className="bi me-2" width="16" height="16"></svg>
               Products
             </Link>
           </li>
           <li>
-            <Link to="/manager/sales" className="nav-link text-white">
+            <Link
+              id="sideSales"
+              to="/manager/sales"
+              className="nav-link text-white"
+            >
               <svg className="bi me-2" width="16" height="16"></svg>
               Sales
             </Link>
           </li>
           <li>
-            <Link to="/manager/users" className="nav-link text-white">
+            <Link
+              id="sideUsers"
+              to="/manager/users"
+              className="nav-link text-white"
+            >
               <svg className="bi me-2" width="16" height="16"></svg>
               Users
             </Link>

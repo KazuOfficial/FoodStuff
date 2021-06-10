@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { removeFromCart } from "../../actions/cart";
 import { salePost } from "../../actions/sales";
@@ -29,7 +29,6 @@ class ShoppingCart extends Component {
     cart.map((element) => {
       fullString = fullString.concat(element.productName, ", ");
     });
-    console.log(fullString);
     if (this.state.emailAddress != "") {
       this.props.salePost(
         fullString,
@@ -88,10 +87,10 @@ class ShoppingCart extends Component {
                         </div>
                         <div id="col" className="col">
                           <a href="#">-</a>
-                          <a href="#" className="border">
+                          {/* <a href="#" className="border">
                             1
                           </a>
-                          <a href="#">+</a>
+                          <a href="#">+</a> */}
                         </div>
                         <div id="col" className="col">
                           &pound; {element.price}

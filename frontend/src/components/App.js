@@ -13,6 +13,7 @@ import SalesPanel from "./manager/sales/SalesPanel";
 import UserPanel from "./manager/users/UserPanel";
 import Login from "./account/Login";
 import Wrapper from "./shoppingCart/Wrapper";
+import PurchaseSuccessful from "./common/PurchaseSuccessful";
 
 class App extends Component {
   render() {
@@ -27,6 +28,11 @@ class App extends Component {
               <Route exact path="/manager/users" component={UserPanel} />
               <Route exact path="/manager/login" component={Login} />
               <Route exact path="/cart" component={Wrapper} />
+              <Route
+                exact
+                path="/purchasesuccessful"
+                component={PurchaseSuccessful}
+              />
             </Switch>
           </Fragment>
         </Router>
