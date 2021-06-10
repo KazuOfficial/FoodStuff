@@ -8,22 +8,30 @@ import {
 } from "./types";
 
 export const salePost =
-  (productName, description, retailPrice) => (dispatch) => {
+  (productName, quantity, emailAddress, purchasePrice) => (dispatch) => {
     // Headers
     const config = {
       headers: {
         "Content-Type": "application/json",
       },
     };
+    var saleDate = new Date().toISOString();
     // Request Body
-    const body = JSON.stringify({ productName, description, retailPrice });
+    const body = JSON.stringify({
+      productName,
+      quantity,
+      emailAddress,
+      saleDate,
+      purchasePrice,
+    });
+
+    console.log(productName, quantity, emailAddress, saleDate, purchasePrice);
 
     axios
-      .post("https://localhost:44351/api/Sale/AddProduct", body, config)
-      .then((res) => {
+      .post("https://localhost:44351/api/Sale", body, config)
+      .then(() => {
         dispatch({
           type: SALE_POST_SUCCESS,
-          payload: res.data,
         });
       })
       .catch((err) => {

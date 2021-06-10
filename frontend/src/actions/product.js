@@ -43,10 +43,9 @@ export const addProduct =
 
     axios
       .post("https://localhost:44351/api/Product/AddProduct", body, config)
-      .then((res) => {
+      .then(() => {
         dispatch({
           type: PRODUCTADD_SUCCESS,
-          payload: res.data,
         });
       })
       .catch((err) => {
@@ -67,10 +66,9 @@ export const deleteProduct = (productName) => (dispatch) => {
 
   axios
     .post("https://localhost:44351/api/Product/DeleteProduct", null, params)
-    .then((res) => {
+    .then(() => {
       dispatch({
         type: PRODUCTDELETE_SUCCESS,
-        payload: res.data,
       });
     })
     .catch((err) => {

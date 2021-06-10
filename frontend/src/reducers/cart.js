@@ -2,6 +2,7 @@ import { ADD_SUBTOTAL, ADD_TO_CART, REMOVE_FROM_CART } from "../actions/types";
 
 const initialState = {
   cart: [],
+  quantity: 0,
   subTotal: 0,
 };
 
@@ -11,6 +12,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         cart: state.cart.concat(action.payload),
+        quantity: state.quantity + 1,
       };
     case REMOVE_FROM_CART:
       console.log(state.cart[0].productName);

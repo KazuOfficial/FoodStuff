@@ -2,24 +2,52 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { removeFromCart } from "../../actions/cart";
+import { salePost } from "../../actions/sales";
 import { bindActionCreators } from "redux";
-import "../payment/StripeContainer";
+import PropTypes from "prop-types";
 
+import "../payment/StripeContainer";
 import "./ShoppingCart.css";
 import StripeContainer from "../payment/StripeContainer";
 
 class ShoppingCart extends Component {
+  state = {
+    emailAddress: "",
+  };
+
+  static propTypes = {
+    salePost: PropTypes.func.isRequired,
+  };
+
   handleClick = (e) => {
     this.props.removeFromCart(e.target.value);
   };
 
   onClick = (e) => {
-    e.target.classList.add("collapse");
-    document.getElementById("stripeContainer").classList.remove("collapse");
+    const { cart, quantity, subTotal } = this.props.cart;
+    var fullString = "";
+    cart.map((element) => {
+      fullString = fullString.concat(element.productName, ", ");
+    });
+    console.log(fullString);
+    if (this.state.emailAddress != "") {
+      this.props.salePost(
+        fullString,
+        quantity,
+        this.state.emailAddress,
+        subTotal + 5
+      );
+      e.target.classList.add("collapse");
+      document.getElementById("stripeContainer").classList.remove("collapse");
+      document.getElementById("emailAddress").classList.add("collapse");
+    }
   };
+
+  onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   render() {
     const { cart, subTotal } = this.props.cart;
+    const { emailAddress } = this.state;
     return (
       <div className="body mt-5">
         <div id="card" className="card">
@@ -135,6 +163,15 @@ class ShoppingCart extends Component {
                 <div id="stripeContainer" className="collapse">
                   <StripeContainer />
                 </div>
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Email address"
+                  onChange={this.onChange}
+                  value={emailAddress}
+                  name="emailAddress"
+                  id="emailAddress"
+                ></input>
                 <button onClick={this.onClick} id="btn" className="btn">
                   CHECKOUT
                 </button>
@@ -153,7 +190,7 @@ const mapStateToProps = (state) => ({
 });
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ removeFromCart }, dispatch);
+  return bindActionCreators({ removeFromCart, salePost }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCart);

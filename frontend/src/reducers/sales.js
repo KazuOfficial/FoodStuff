@@ -1,4 +1,9 @@
-import { SALES_REPORT_FAIL, SALES_REPORT_SUCCESS } from "../actions/types";
+import {
+  SALES_REPORT_FAIL,
+  SALES_REPORT_SUCCESS,
+  SALE_POST_SUCCESS,
+  SALE_POST_FAIL,
+} from "../actions/types";
 
 const initialState = {
   saleList: null,
@@ -11,6 +16,12 @@ export default function (state = initialState, action) {
         ...state,
         saleList: action.payload,
       };
+    case SALE_POST_SUCCESS:
+      window.location.href = "/";
+      return {
+        ...state,
+      };
+    case SALE_POST_FAIL:
     case SALES_REPORT_FAIL:
       return {
         ...state,

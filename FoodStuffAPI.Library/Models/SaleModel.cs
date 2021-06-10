@@ -13,5 +13,5 @@ namespace FoodStuffAPI.Library.Models
         public string EmailAddress { get; set; }
         public DateTime SaleDate { get; set; }
         public double PurchasePrice { get; set; }
-    }
+    }   
 }
