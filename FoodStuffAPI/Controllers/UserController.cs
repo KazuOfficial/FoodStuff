@@ -16,7 +16,7 @@ namespace FoodStuffAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class UserController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -32,19 +32,11 @@ namespace FoodStuffAPI.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
-        public UserModel GetById()
-        {
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            return _userData.GetUserById(userId).First();
-        }
-
         public record UserRegistrationModel(string FirstName, string LastName, string EmailAddress, string Password);
 
         //[Authorize(Roles = "Admin")]
         [HttpPost]
-        [Route("User/Register")]
+        [Route("Register")]
         public async Task<IActionResult> Register(UserRegistrationModel user)
         {
             if (ModelState.IsValid)
@@ -73,15 +65,15 @@ namespace FoodStuffAPI.Controllers
 
         //[Authorize(Roles = "Admin")]
         [HttpGet]
-        [Route("Admin/GetAllUsers")]
+        [Route("GetAllUsers")]
         public List<ApplicationUserModel> GetAllUsers()
         {
             List<ApplicationUserModel> output = new List<ApplicationUserModel>();
 
             var users = _context.Users.ToList();
-            var userRoles = from ur in _context.UserRoles
-                            join r in _context.Roles on ur.RoleId equals r.Id
-                            select new { ur.UserId, ur.RoleId, r.Name };
+            //var userRoles = from ur in _context.UserRoles
+            //                join r in _context.Roles on ur.RoleId equals r.Id
+            //                select new { ur.UserId, ur.RoleId, r.Name };
 
             foreach (var user in users)
             {
@@ -91,7 +83,7 @@ namespace FoodStuffAPI.Controllers
                     Email = user.Email
                 };
 
-                u.Roles = userRoles.Where(x => x.UserId == u.Id).ToDictionary(key => key.RoleId, val => val.Name);
+                //u.Roles = userRoles.Where(x => x.UserId == u.Id).ToDictionary(key => key.RoleId, val => val.Name);
 
                 //foreach (var r in user.Roles)
                 //{
@@ -104,42 +96,43 @@ namespace FoodStuffAPI.Controllers
             return output;
         }
 
-        //[Authorize(Roles = "Admin")]
-        [HttpGet]
-        [Route("Admin/GetAllRoles")]
-        public Dictionary<string, string> GetAllRoles()
-        {
-            var roles = _context.Roles.ToDictionary(x => x.Id, x => x.Name);
+        //    //[Authorize(Roles = "Admin")]
+        //    [HttpGet]
+        //    [Route("GetAllRoles")]
+        //    public Dictionary<string, string> GetAllRoles()
+        //    {
+        //        var roles = _context.Roles.ToDictionary(x => x.Id, x => x.Name);
 
-            return roles;
-        }
+        //        return roles;
+        //    }
 
-        //[Authorize(Roles = "Admin")]
-        [HttpPost]
-        [Route("Admin/AddRole")]
-        public async Task AddRole(UserRolePairModel pairing)
-        {
-            string loggedInUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        //    //[Authorize(Roles = "Admin")]
+        //    [HttpPost]
+        //    [Route("AddRole")]
+        //    public async Task AddRole(UserRolePairModel pairing)
+        //    {
+        //        string loggedInUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var user = await _userManager.FindByIdAsync(pairing.UserId);
+        //        var user = await _userManager.FindByIdAsync(pairing.UserId);
 
-            _logger.LogInformation("Admin {Admin} added user {User} to role {Role}", loggedInUserId, user.Id, pairing.RoleName);
+        //        _logger.LogInformation("Admin {Admin} added user {User} to role {Role}", loggedInUserId, user.Id, pairing.RoleName);
 
-            await _userManager.AddToRoleAsync(user, pairing.RoleName);
-        }
+        //        await _userManager.AddToRoleAsync(user, pairing.RoleName);
+        //    }
 
-        //[Authorize(Roles = "Admin")]
-        [HttpPost]
-        [Route("Admin/RemoveRole")]
-        public async Task RemoveRole(UserRolePairModel pairing)
-        {
-            string loggedInUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        //    //[Authorize(Roles = "Admin")]
+        //    [HttpPost]
+        //    [Route("RemoveRole")]
+        //    public async Task RemoveRole(UserRolePairModel pairing)
+        //    {
+        //        string loggedInUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var user = await _userManager.FindByIdAsync(pairing.UserId);
+        //        var user = await _userManager.FindByIdAsync(pairing.UserId);
 
-            _logger.LogInformation("Admin {Admin} removed user {User} from role {Role}", loggedInUserId, user.Id, pairing.RoleName);
+        //        _logger.LogInformation("Admin {Admin} removed user {User} from role {Role}", loggedInUserId, user.Id, pairing.RoleName);
 
-            await _userManager.RemoveFromRoleAsync(user, pairing.RoleName);
-        }
+        //        await _userManager.RemoveFromRoleAsync(user, pairing.RoleName);
+        //    }
+        //}
     }
 }
