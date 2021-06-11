@@ -1,51 +1,21 @@
 import axios from "axios";
 
-import {
-  USER_LOADED,
-  USER_LOADING,
-  AUTH_ERROR,
-  LOGIN_SUCCESS,
-  LOGIN_FAIL,
-  LOGOUT_SUCCESS,
-  REGISTER_SUCCESS,
-  REGISTER_FAIL,
-} from "./types";
-
-// CHECK TOKEN & LOAD USER
-export const loadUser = () => (dispatch, getState) => {
-  // User Loading
-  dispatch({ type: USER_LOADING });
-
-  axios
-    .get("/api/auth/user", tokenConfig(getState))
-    .then((res) => {
-      dispatch({
-        type: USER_LOADED,
-        payload: res.data,
-      });
-    })
-    .catch((err) => {
-      //dispatch(returnErrors(err.response.data, err.response.status));
-      dispatch({
-        type: AUTH_ERROR,
-      });
-    });
-};
+import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_SUCCESS } from "./types";
 
 // LOGIN USER
 export const login = (username, password) => (dispatch) => {
-  // Headers
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
+  const grant_type = "password";
+
+  const params = {
+    params: {
+      username,
+      password,
+      grant_type,
     },
   };
 
-  // Request Body
-  const body = JSON.stringify({ username, password });
-
   axios
-    .post("/api/auth/login", body, config)
+    .post("https://localhost:44351/token", null, params)
     .then((res) => {
       dispatch({
         type: LOGIN_SUCCESS,
@@ -53,41 +23,13 @@ export const login = (username, password) => (dispatch) => {
       });
     })
     .catch((err) => {
+      console.log(err);
       //dispatch(returnErrors(err.response.data, err.response.status));
       dispatch({
         type: LOGIN_FAIL,
       });
     });
 };
-
-export const register =
-  ({ username, password, email, captchakey }) =>
-  (dispatch) => {
-    // Headers
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-
-    // Request Body
-    const body = JSON.stringify({ username, email, password, captchakey });
-
-    axios
-      .post("/api/auth/register", body, config)
-      .then((res) => {
-        dispatch({
-          type: REGISTER_SUCCESS,
-          payload: res.data,
-        });
-      })
-      .catch((err) => {
-        dispatch(returnErrors(err.response.data, err.response.status));
-        dispatch({
-          type: REGISTER_FAIL,
-        });
-      });
-  };
 
 // LOGOUT USER
 export const logout = () => (dispatch, getState) => {

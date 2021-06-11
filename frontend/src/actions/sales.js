@@ -25,8 +25,6 @@ export const salePost =
       purchasePrice,
     });
 
-    console.log(productName, quantity, emailAddress, saleDate, purchasePrice);
-
     axios
       .post("https://localhost:44351/api/Sale", body, config)
       .then(() => {
