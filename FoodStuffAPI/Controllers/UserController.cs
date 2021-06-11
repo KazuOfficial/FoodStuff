@@ -34,7 +34,7 @@ namespace FoodStuffAPI.Controllers
 
         public record UserRegistrationModel(string FirstName, string LastName, string EmailAddress, string Password);
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize]
         [HttpPost]
         [Route("Register")]
         public async Task<IActionResult> Register(UserRegistrationModel user)
@@ -63,7 +63,7 @@ namespace FoodStuffAPI.Controllers
             return BadRequest();
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize]
         [HttpGet]
         [Route("GetAllUsers")]
         public List<ApplicationUserModel> GetAllUsers()

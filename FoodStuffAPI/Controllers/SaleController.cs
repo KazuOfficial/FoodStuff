@@ -29,6 +29,7 @@ namespace FoodStuffAPI.Controllers
         }
 
         //[Authorize(Roles = "Admin")]
+        [Authorize]
         [Route("GetSales")]
         [HttpGet]
         public List<SaleModel> GetSales()

@@ -11,7 +11,6 @@ namespace FoodStuffAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [AllowAnonymous]
     public class ProductController : ControllerBase
     {
         private readonly IProductData _productData;
@@ -27,7 +26,7 @@ namespace FoodStuffAPI.Controllers
             return _productData.GetProducts();
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize]
         [HttpPost]
         [Route("AddProduct")]
         public void AddProduct(ProductModel item)
@@ -35,7 +34,7 @@ namespace FoodStuffAPI.Controllers
             _productData.SaveProduct(item);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize]
         [HttpPost]
         [Route("DeleteProduct")]
         public void DeleteProduct(string productName)

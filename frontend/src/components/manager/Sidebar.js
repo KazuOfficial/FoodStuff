@@ -1,8 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { logout } from "../../actions/auth";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-export default class Sidebar extends Component {
+class Sidebar extends Component {
+  static propTypes = {
+    auth: PropTypes.object.isRequired,
+    logout: PropTypes.func.isRequired,
+  };
+
   render() {
+    const { userName } = this.props.auth;
     return (
       <div
         className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark vh-100 position-absolute"
@@ -65,24 +74,16 @@ export default class Sidebar extends Component {
               height="32"
               className="rounded-circle me-2"
             ></img>
-            <strong>Kazu</strong>
+            <strong>{userName.slice(0, 20)}...</strong>
           </Link>
           <ul
             className="dropdown-menu dropdown-menu-dark text-small shadow"
             aria-labelledby="dropdownUser1"
           >
             <li>
-              <Link className="dropdown-item" to="#">
-                Profile
-              </Link>
-            </li>
-            <li>
-              <hr className="dropdown-divider" />
-            </li>
-            <li>
-              <Link className="dropdown-item" to="#">
+              <button onClick={this.props.logout} className="dropdown-item">
                 Sign out
-              </Link>
+              </button>
             </li>
           </ul>
         </div>
@@ -90,3 +91,9 @@ export default class Sidebar extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, { logout })(Sidebar);

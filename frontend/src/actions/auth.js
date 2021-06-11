@@ -23,7 +23,6 @@ export const login = (username, password) => (dispatch) => {
       });
     })
     .catch((err) => {
-      console.log(err);
       //dispatch(returnErrors(err.response.data, err.response.status));
       dispatch({
         type: LOGIN_FAIL,
@@ -32,18 +31,8 @@ export const login = (username, password) => (dispatch) => {
 };
 
 // LOGOUT USER
-export const logout = () => (dispatch, getState) => {
-  axios
-    .post("/api/auth/logout/", null, tokenConfig(getState))
-    .then((res) => {
-      dispatch({ type: "CLEAR_LEADS" });
-      dispatch({
-        type: LOGOUT_SUCCESS,
-      });
-    })
-    .catch((err) => {
-      //dispatch(returnErrors(err.response.data, err.response.status));
-    });
+export const logout = () => (dispatch) => {
+  dispatch({ type: LOGOUT_SUCCESS });
 };
 
 // Setup config with token - helper function
@@ -60,7 +49,7 @@ export const tokenConfig = (getState) => {
 
   // If token, add to headers config
   if (token) {
-    config.headers["Authorization"] = `Token ${token}`;
+    config.headers["Authorization"] = `Bearer ${token}`;
   }
 
   return config;
