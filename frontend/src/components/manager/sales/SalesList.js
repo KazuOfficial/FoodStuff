@@ -7,11 +7,12 @@ import { bindActionCreators } from "redux";
 class SalesList extends Component {
   static propTypes = {
     sales: PropTypes.object.isRequired,
+    auth: PropTypes.object.isRequired,
     saleReport: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
-    this.props.saleReport();
+    this.props.saleReport(this.props.auth.access_Token);
   }
 
   render() {
@@ -53,6 +54,7 @@ class SalesList extends Component {
 
 const mapStateToProps = (state) => ({
   sales: state.sales,
+  auth: state.auth,
 });
 
 function mapDispatchToProps(dispatch) {

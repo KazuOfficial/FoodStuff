@@ -13,12 +13,19 @@ class AddUser extends Component {
 
   static propTypes = {
     addUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
   };
 
   onSubmit = (e) => {
     e.preventDefault();
     const { firstName, lastName, emailAddress, password } = this.state;
-    this.props.addUser(firstName, lastName, emailAddress, password);
+    this.props.addUser(
+      firstName,
+      lastName,
+      emailAddress,
+      password,
+      this.props.auth.access_Token
+    );
   };
 
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
@@ -84,6 +91,7 @@ class AddUser extends Component {
 
 const mapStateToProps = (state) => ({
   user: state.user,
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { addUser })(AddUser);

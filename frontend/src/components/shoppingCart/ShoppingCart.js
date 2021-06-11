@@ -85,13 +85,13 @@ class ShoppingCart extends Component {
                             {element.productName}
                           </div>
                         </div>
-                        <div id="col" className="col">
+                        {/* <div id="col" className="col">
                           <a href="#">-</a>
-                          {/* <a href="#" className="border">
+                          <a href="#" className="border">
                             1
                           </a>
-                          <a href="#">+</a> */}
-                        </div>
+                          <a href="#">+</a>
+                        </div> */}
                         <div id="col" className="col">
                           &pound; {element.price}
                           <button

@@ -7,16 +7,16 @@ import { bindActionCreators } from "redux";
 class UserList extends Component {
   static propTypes = {
     user: PropTypes.object.isRequired,
+    auth: PropTypes.object.isRequired,
     loadUsers: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
-    this.props.loadUsers();
+    this.props.loadUsers(this.props.auth.access_Token);
   }
 
   render() {
     const { userList } = this.props.user;
-    console.log(userList);
     return (
       <div className="table-responsive">
         <table className="table table-striped mt-5">
@@ -48,6 +48,7 @@ class UserList extends Component {
 
 const mapStateToProps = (state) => ({
   user: state.user,
+  auth: state.auth,
 });
 
 function mapDispatchToProps(dispatch) {

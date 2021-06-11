@@ -7,9 +7,15 @@ import {
   USERADD_FAIL,
 } from "./types";
 
-export const loadUsers = () => (dispatch) => {
+export const loadUsers = (token) => (dispatch) => {
+  const config = {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  };
+
   axios
-    .get("https://localhost:44351/api/User/GetAllUsers")
+    .get("https://localhost:44351/api/User/GetAllUsers", config)
     .then((res) => {
       dispatch({
         type: USERLOAD_SUCCESS,
@@ -25,11 +31,12 @@ export const loadUsers = () => (dispatch) => {
 };
 
 export const addUser =
-  (firstName, lastName, emailAddress, password) => (dispatch) => {
+  (firstName, lastName, emailAddress, password, token) => (dispatch) => {
     // Headers
     const config = {
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
       },
     };
     // Request Body
@@ -47,11 +54,12 @@ export const addUser =
           type: USERADD_SUCCESS,
           payload: res.data,
         });
+        dispatch(loadUsers(token));
       })
       .catch((err) => {
         //dispatch(returnErrors(err.response.data, err.response.status));
         dispatch({
-          type: USERLOAD_FAIL,
+          type: USERADD_FAIL,
         });
       });
   };

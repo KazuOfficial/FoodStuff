@@ -32,7 +32,6 @@ export default function (state = initialState, action) {
       };
     case PRODUCTDELETE_SUCCESS:
     case PRODUCTADD_SUCCESS:
-      window.location.reload();
       return {
         ...state,
       };

@@ -8,7 +8,9 @@ import {
 } from "../actions/types";
 
 const initialState = {
-  token: localStorage.getItem("token"),
+  //token: localStorage.getItem("token"),
+  access_Token: null,
+  userName: null,
   isAuthenticated: null,
   isLoading: false,
 };
@@ -28,7 +30,8 @@ export default function (state = initialState, action) {
         user: action.payload,
       };
     case LOGIN_SUCCESS:
-      localStorage.setItem("token", action.payload.token);
+      //console.log(action.payload.access_Token);
+      //localStorage.setItem("token", action.payload.access_Token);
       return {
         ...state,
         ...action.payload,
@@ -38,11 +41,11 @@ export default function (state = initialState, action) {
     case AUTH_ERROR:
     case LOGIN_FAIL:
     case LOGOUT_SUCCESS:
-      localStorage.removeItem("token");
+      //localStorage.removeItem("access_Token");
       return {
         ...state,
-        token: null,
-        user: null,
+        access_Token: null,
+        userName: null,
         isAuthenticated: false,
         isLoading: false,
       };

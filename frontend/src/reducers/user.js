@@ -17,14 +17,7 @@ export default function (state = initialState, action) {
         userList: action.payload,
       };
     case USERLOAD_FAIL:
-      return {
-        ...state,
-      };
     case USERADD_SUCCESS:
-      window.location.reload();
-      return {
-        ...state,
-      };
     case USERADD_FAIL:
       return {
         ...state,

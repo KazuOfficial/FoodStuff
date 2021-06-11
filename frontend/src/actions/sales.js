@@ -40,9 +40,15 @@ export const salePost =
       });
   };
 
-export const saleReport = () => (dispatch) => {
+export const saleReport = (token) => (dispatch) => {
+  const config = {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  };
+
   axios
-    .get("https://localhost:44351/api/Sale/GetSales")
+    .get("https://localhost:44351/api/Sale/GetSales", config)
     .then((res) => {
       dispatch({
         type: SALES_REPORT_SUCCESS,
@@ -50,6 +56,7 @@ export const saleReport = () => (dispatch) => {
       });
     })
     .catch((err) => {
+      console.log(err);
       //dispatch(returnErrors(err.response.data, err.response.status));
       dispatch({
         type: SALES_REPORT_FAIL,

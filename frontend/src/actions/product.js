@@ -31,13 +31,16 @@ export const loadProducts = () => (dispatch) => {
 };
 
 export const addProduct =
-  (productName, description, retailPrice) => (dispatch) => {
+  (productName, description, retailPrice, token) => (dispatch) => {
     // Headers
     const config = {
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
       },
     };
+
+    console.log(config);
     // Request Body
     const body = JSON.stringify({ productName, description, retailPrice });
 
@@ -47,8 +50,10 @@ export const addProduct =
         dispatch({
           type: PRODUCTADD_SUCCESS,
         });
+        dispatch(loadProducts());
       })
       .catch((err) => {
+        console.log(err);
         //dispatch(returnErrors(err.response.data, err.response.status));
         dispatch({
           type: PRODUCTADD_FAIL,
@@ -56,20 +61,24 @@ export const addProduct =
       });
   };
 
-export const deleteProduct = (productName) => (dispatch) => {
+export const deleteProduct = (productName, token) => (dispatch) => {
   // Headers
-  const params = {
+  const config = {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
     params: {
       productName,
     },
   };
 
   axios
-    .post("https://localhost:44351/api/Product/DeleteProduct", null, params)
+    .post("https://localhost:44351/api/Product/DeleteProduct", null, config)
     .then(() => {
       dispatch({
         type: PRODUCTDELETE_SUCCESS,
       });
+      dispatch(loadProducts());
     })
     .catch((err) => {
       //dispatch(returnErrors(err.response.data, err.response.status));

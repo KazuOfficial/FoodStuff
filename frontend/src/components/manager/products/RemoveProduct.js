@@ -11,13 +11,14 @@ class RemoveProduct extends Component {
   static propTypes = {
     deleteProduct: PropTypes.func.isRequired,
     product: PropTypes.object.isRequired,
+    auth: PropTypes.object.isRequired,
   };
 
   onSubmit = (e) => {
     e.preventDefault();
     const { productName } = this.state;
     if (productName != "") {
-      this.props.deleteProduct(productName);
+      this.props.deleteProduct(productName, this.props.auth.access_Token);
     }
   };
 
@@ -40,8 +41,8 @@ class RemoveProduct extends Component {
           >
             <option hidden>--- choose a product ---</option>
             {productList &&
-              productList.map(function (element) {
-                return <option>{element.productName}</option>;
+              productList.map(function (element, index) {
+                return <option key={index}>{element.productName}</option>;
               })}
           </select>
         </div>
@@ -55,6 +56,7 @@ class RemoveProduct extends Component {
 
 const mapStateToProps = (state) => ({
   product: state.product,
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { deleteProduct })(RemoveProduct);

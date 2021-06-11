@@ -13,12 +13,15 @@ class AddProduct extends Component {
   static propTypes = {
     addProduct: PropTypes.func.isRequired,
     product: PropTypes.object.isRequired,
+    auth: PropTypes.object.isRequired,
   };
 
   onSubmit = (e) => {
     e.preventDefault();
     const { name, description, price } = this.state;
-    this.props.addProduct(name, description, parseInt(price));
+    const { access_Token } = this.props.auth;
+    console.log(access_Token);
+    this.props.addProduct(name, description, parseInt(price), access_Token);
   };
 
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
@@ -73,6 +76,7 @@ class AddProduct extends Component {
 
 const mapStateToProps = (state) => ({
   product: state.product,
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { addProduct })(AddProduct);
