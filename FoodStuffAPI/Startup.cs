@@ -43,7 +43,7 @@ namespace FoodStuffAPI
 
             services.AddCors(options =>
             {
-                options.AddPolicy("CorsPolicy", builder => builder.WithOrigins("https://localhost:44351")
+                options.AddPolicy("CorsPolicy", builder => builder.WithOrigins(Configuration.GetValue<string>("FrontendURL"))
                     .AllowAnyHeader()
                     .AllowAnyMethod()
                     .AllowCredentials()
