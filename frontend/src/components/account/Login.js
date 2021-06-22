@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "../layout/Header";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { login } from "../../actions/auth";
@@ -14,12 +14,15 @@ class Login extends Component {
 
   static propTypes = {
     login: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
     isAuthenticated: PropTypes.bool,
   };
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.login(this.state.username, this.state.password);
+    if (this.state.username != "" && this.state.password != "") {
+      this.props.login(this.state.username, this.state.password);
+    }
   };
 
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
@@ -30,9 +33,17 @@ class Login extends Component {
     }
 
     const { username, password } = this.state;
+    const { error } = this.props.auth;
     return (
       <>
         <Header />
+        {error != null ? (
+          <div className="container mt-3">
+            <div className="alert alert-danger" role="alert">
+              {error}
+            </div>
+          </div>
+        ) : null}
         <form onSubmit={this.onSubmit}>
           <div className="col d-flex justify-content-center">
             <div className="card mt-5 text-center" style={{ width: "30rem" }}>
@@ -74,6 +85,7 @@ class Login extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  auth: state.auth,
   isAuthenticated: state.auth.isAuthenticated,
 });
 

@@ -26,21 +26,18 @@ export const login = (username, password) => (dispatch) => {
       //dispatch(returnErrors(err.response.data, err.response.status));
       dispatch({
         type: LOGIN_FAIL,
+        payload: err.message,
       });
     });
 };
 
-// LOGOUT USER
 export const logout = () => (dispatch) => {
   dispatch({ type: LOGOUT_SUCCESS });
 };
 
-// Setup config with token - helper function
 export const tokenConfig = (getState) => {
-  // Get token from state
   const token = getState().auth.token;
 
-  // Headers
   const config = {
     headers: {
       "Content-Type": "application/json",
