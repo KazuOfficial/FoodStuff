@@ -1,5 +1,4 @@
-[![Build 
-Status](https://travis-ci.com/KazuOfficial/FoodStuff.svg?branch=master)](https://travis-ci.com/KazuOfficial/FoodStuff)
+![example workflow](https://github.com/KazuOfficial/FoodStuff/actions/workflows/ci.yml/badge.svg)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 <!-- PROJECT LOGO -->
@@ -10,8 +9,6 @@ Status](https://travis-ci.com/KazuOfficial/FoodStuff.svg?branch=master)](https:/
 
   <p align="center">
     A food delivery application
-    <br />
-    <a href="https://github.com/KazuOfficial/FoodStuff"><strong>Explore the docs (coming soon) »</strong></a>
     <br />
     <br />
     <a href="https://github.com/KazuOfficial/FoodStuff/issues">Report Bug</a>
@@ -38,7 +35,6 @@ Status](https://travis-ci.com/KazuOfficial/FoodStuff.svg?branch=master)](https:/
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -100,12 +96,6 @@ Clone the repo
    ```sh
    npm install
    ```
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-_Please refer to the [Documentation](https://example.com) (coming soon)_
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
